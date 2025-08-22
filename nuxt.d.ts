@@ -1,8 +1,8 @@
-import type { Router, RouteLocationNormalized } from 'vue-router';
+import type { Router, RouteLocationNormalized } from "vue-router";
 
 export {};
 
-declare module 'vue' {
+declare module "vue" {
   interface ComponentCustomProperties {
     $t: (key: string) => string;
     $router: Router;

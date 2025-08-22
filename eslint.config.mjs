@@ -1,6 +1,15 @@
-// @ts-check
-import withNuxt from './.nuxt/eslint.config.mjs'
+import withNuxt from "./.nuxt/eslint.config.mjs";
 
-export default withNuxt(
-  // Your custom configs here
-)
+import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
+
+export default withNuxt(eslintPluginPrettierRecommended, {
+  rules: {
+    "@typescript-eslint/no-explicit-any": "off",
+    "vue/no-multiple-template-root": "off",
+    "vue/no-required-prop-with-default": "off",
+    "vue/require-default-prop": "off",
+    "import/no-named-default": "off",
+    "@typescript-eslint/no-empty-object-type": "off",
+    "prettier/prettier": ["error", { endOfLine: "auto" }, { usePrettierrc: true }]
+  }
+});
