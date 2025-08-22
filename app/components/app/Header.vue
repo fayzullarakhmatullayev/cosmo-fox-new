@@ -1,5 +1,3 @@
-<script lang="ts" setup></script>
-
 <template>
   <header>
     <h2>Header</h2>
@@ -9,6 +7,8 @@
     </nav>
   </header>
 </template>
+
+<script lang="ts" setup></script>
 
 <style lang="scss">
 header {
