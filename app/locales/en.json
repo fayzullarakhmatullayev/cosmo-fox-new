@@ -1,0 +1,14 @@
+{
+  "en": "en",
+  "ru": "ru",
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "mine": "Mine",
+    "token": "Token",
+    "roadmap": "Roadmap",
+    "partners": "Partners",
+    "white-paper": "White paper",
+    "blog": "Blog"
+  }
+}

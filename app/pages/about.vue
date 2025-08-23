@@ -1,18 +1,13 @@
 <template>
   <div>
-    <h5>Click emojis to remove them.</h5>
-    <ul>
-      <li v-for="item in items" :key="item" @click="removeItem(item)">
-        {{ item }}
-      </li>
-    </ul>
+    <h2>About</h2>
   </div>
 </template>
 
 <script lang="ts" setup>
-const items = ref(["😏", "😐", "😑", "😒", "😕"]);
-
-function removeItem(toRemove: string) {
-  items.value = items.value.filter((item: string) => item !== toRemove);
-}
+const { t } = useI18n();
+useHead({
+  title: t("nav.about"),
+  meta: [{ name: "description", content: "About page" }]
+});
 </script>

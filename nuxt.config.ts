@@ -12,6 +12,18 @@ export default defineNuxtConfig({
     "~/assets/scss/main.scss"
   ],
 
+  app: {
+    head: {
+      link: [
+        {
+          rel: "icon",
+          type: "image/x-icon",
+          href: "/images/logo.png"
+        }
+      ]
+    }
+  },
+
   svgo: {
     componentPrefix: "icon",
     defaultImport: "component"
@@ -19,11 +31,11 @@ export default defineNuxtConfig({
 
   i18n: {
     locales: [
-      { code: "ru", file: "ru.json" },
-      { code: "en", file: "en.json" }
+      { code: "ru", name: "ru", file: "ru.json" },
+      { code: "en", name: "en", file: "en.json" }
     ],
     defaultLocale: "ru",
-    langDir: "../locales",
+    langDir: "../app/locales",
     strategy: "prefix",
 
     detectBrowserLanguage: {

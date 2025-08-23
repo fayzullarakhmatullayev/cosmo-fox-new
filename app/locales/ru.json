@@ -1,0 +1,14 @@
+{
+  "en": "en",
+  "ru": "ру",
+  "nav": {
+    "home": "Главная",
+    "about": "Об игре",
+    "mine": "Добывай",
+    "token": "Токен",
+    "roadmap": "Роадмап",
+    "partners": "Партнеры",
+    "white-paper": "White paper",
+    "blog": "Блог"
+  }
+}

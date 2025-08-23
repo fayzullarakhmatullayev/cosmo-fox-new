@@ -1,17 +1,15 @@
 <template>
-  <div>
-    <h2>Main page {{ $t("test") }}</h2>
-    <div class="wrapper">
-      <icon-charts width="100" height="100" />
+  <div class="home">
+    <div class="video">
+      <video src="/videos/title.mp4" loop autoplay muted></video>
     </div>
   </div>
 </template>
 
-<script lang="ts" setup></script>
-
-<style lang="scss">
-.wrapper {
-  display: flex;
-  align-items: center;
-}
-</style>
+<script lang="ts" setup>
+const { t } = useI18n();
+useHead({
+  title: t("nav.home"),
+  meta: [{ name: "description", content: "Main page" }]
+});
+</script>
