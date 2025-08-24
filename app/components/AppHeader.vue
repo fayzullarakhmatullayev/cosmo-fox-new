@@ -5,7 +5,7 @@
         <div class="header__nav">
           <!-- Logo -->
           <nuxt-link-locale class="header__nav--logo" to="/">
-            <img src="/images/logo.png" alt="logo" />
+            <NuxtImg src="/images/logo.png" alt="logo" format="webp" quality="80" />
           </nuxt-link-locale>
 
           <!-- Nav items -->
