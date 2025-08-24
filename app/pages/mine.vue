@@ -1,5 +1,8 @@
 <template>
   <h2>Get it</h2>
+  <teleport to="body">
+    <bg-wrapper />
+  </teleport>
 </template>
 
 <script lang="ts" setup>
