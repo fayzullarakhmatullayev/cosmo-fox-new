@@ -1,6 +1,7 @@
 <template>
   <div class="bg-wrapper">
-    <NuxtImg :key="imageSrc" alt="bg" :src="imageSrc" format="webp" quality="80" class="bg-img" />
+    <NuxtImg v-show="isIncludes('home')" alt="bg" src="/images/home-bg.jpg" format="webp" quality="80" class="bg-img" />
+    <NuxtImg v-show="!isIncludes('home')" alt="bg" src="/images/all-bg.jpg" format="webp" quality="80" class="bg-img" />
   </div>
 </template>
 
@@ -10,8 +11,6 @@ const route = useRoute();
 const isIncludes = (pageName: string) => {
   return String(route.meta.page)?.includes(pageName);
 };
-
-const imageSrc = computed(() => (isIncludes("home") ? "/images/home-bg.jpg" : "/images/all-bg.jpg"));
 </script>
 
 <style>
