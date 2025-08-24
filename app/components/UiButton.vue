@@ -28,6 +28,11 @@ a {
   &.large {
     padding: 24px 87px 26px 85px;
     font-size: 30px;
+
+    @include laptop {
+      padding: 20px 70px 22px 68px;
+      font-size: 25px;
+    }
   }
 }
 </style>

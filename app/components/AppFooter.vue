@@ -3,7 +3,13 @@
     <div class="container">
       <div class="footer__wrapper">
         <div class="footer__social">
-          <a v-for="social in socials" :key="social.name" :href="social.link" class="footer__social--item">
+          <a
+            v-for="social in socials"
+            :key="social.name"
+            :href="social.link"
+            class="footer__social--item"
+            :style="{ width: `${social.width}px` }"
+          >
             <component :is="`icon-${social.icon}`" :style="{ width: `${social.width}px` }" />
             <span>{{ social.name }}</span>
           </a>

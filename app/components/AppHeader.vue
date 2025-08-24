@@ -50,7 +50,6 @@ const { locales, setLocale, t, locale } = useI18n();
 const isLocaleVisible = ref(false);
 
 const navs = reactive([
-  { to: "/", label: "nav.home" },
   { to: "/about", label: "nav.about" },
   { to: "/mine", label: "nav.mine" },
   { to: "/token", label: "nav.token" },
