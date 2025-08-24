@@ -26,7 +26,7 @@ export default defineNuxtConfig({
           href: "/images/home-bg.jpg"
         },
         {
-          rel: "prefetch",
+          rel: "preload",
           as: "image",
           href: "/images/all-bg.jpg"
         }

@@ -1,6 +1,6 @@
 <template>
   <div class="bg-wrapper">
-    <img :key="src" :src="src" :alt="alt" class="bg-img" />
+    <img :src="src" :alt="alt" class="bg-img" />
   </div>
 </template>
 
