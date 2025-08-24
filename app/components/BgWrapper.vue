@@ -1,6 +1,6 @@
 <template>
   <div class="bg-wrapper">
-    <NuxtImg :key="route.fullPath" alt="bg" :src="imageSrc" format="webp" quality="90" class="bg-img" />
+    <NuxtImg :key="imageSrc" alt="bg" :src="imageSrc" format="webp" quality="90" class="bg-img" />
   </div>
 </template>
 
