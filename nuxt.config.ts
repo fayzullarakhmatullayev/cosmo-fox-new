@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  modules: ["@nuxt/eslint", "nuxt-svgo", "@nuxtjs/i18n"],
+  modules: ["@nuxt/eslint", "nuxt-svgo", "@nuxtjs/i18n", "@nuxt/image"],
 
   css: [
     "swiper/css",

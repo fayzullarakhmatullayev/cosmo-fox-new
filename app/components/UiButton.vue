@@ -20,6 +20,7 @@ a {
   background: linear-gradient(135deg, #69fee6, #2be7df, #23c8e0);
   text-align: center;
   display: block;
+  cursor: pointer;
   @include laptop {
     font-size: 20px;
     min-width: 160px;

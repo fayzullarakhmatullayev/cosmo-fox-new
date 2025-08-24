@@ -15,7 +15,7 @@
 
 body {
   font-family: var(--font-furore);
-  background: #000106;
+  background: rgba(2, 2, 5, 1);
   color: rgba(151, 177, 207, 1);
 
   font-weight: 400;
@@ -29,7 +29,6 @@ body {
   width: 100%;
   min-height: 100dvh;
   height: 100%;
-  background: url("/images/all-bg.jpg") no-repeat center center / cover;
 
   position: relative;
   &::after {
