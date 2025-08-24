@@ -21,12 +21,12 @@ export default defineNuxtConfig({
           href: "/images/logo.png"
         },
         {
-          rel: "preload",
+          rel: "prefetch",
           as: "image",
           href: "/images/home-bg.jpg"
         },
         {
-          rel: "preload",
+          rel: "prefetch",
           as: "image",
           href: "/images/all-bg.jpg"
         }
