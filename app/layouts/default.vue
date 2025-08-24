@@ -5,11 +5,24 @@
       <div class="container"><nuxt-page /></div>
     </main>
     <app-footer />
+    <bg-wrapper :src="imageSrc" />
   </div>
 </template>
 
 <script lang="ts" setup>
 const route = useRoute();
+
+const imageSrc = computed(() => {
+  let imageSrc = "";
+
+  if (route.meta.page === "home") {
+    imageSrc = "/images/home-bg.jpg";
+  } else {
+    imageSrc = "/images/all-bg.jpg";
+  }
+
+  return imageSrc;
+});
 
 const updateBodyClass = () => {
   document.body.className = "";

@@ -31,7 +31,7 @@ body {
   height: 100%;
 
   position: relative;
-  background: url("/images/all-bg.jpg") center center / cover no-repeat;
+
   &::after {
     content: "";
     width: 100%;
