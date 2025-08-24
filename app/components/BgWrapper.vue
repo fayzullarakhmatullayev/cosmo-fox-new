@@ -1,7 +1,7 @@
 <template>
   <div class="bg-wrapper">
     <Transition name="fade" mode="out-in">
-      <NuxtImg :key="src" :src="src" :alt="alt" format="webp" quality="90" class="bg-img" />
+      <NuxtImg :src="src" :alt="alt" format="webp" quality="90" class="bg-img" />
     </Transition>
   </div>
 </template>

@@ -5,7 +5,7 @@
       <div class="container"><nuxt-page /></div>
     </main>
     <app-footer />
-    <bg-wrapper :src="imageSrc" />
+    <bg-wrapper :key="route.fullPath" :src="imageSrc" />
   </div>
 </template>
 
