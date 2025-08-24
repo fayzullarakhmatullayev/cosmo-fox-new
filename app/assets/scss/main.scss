@@ -1,3 +1,5 @@
+@import "mixins";
+
 *,
 *::before,
 *::after {
@@ -14,21 +16,23 @@
 body {
   font-family: var(--font-furore);
   background: #000106;
-  color: white;
+  color: rgba(151, 177, 207, 1);
 
   font-weight: 400;
   font-size: 18px;
-  line-height: 1.2;
+  line-height: 1;
 
   -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
   overflow-x: hidden;
   width: 100%;
+  min-height: 100dvh;
+  height: 100%;
 }
 
-img {
+img,
+svg {
   display: block;
   width: 100%;
   height: 100%;
@@ -40,6 +44,7 @@ html {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 ul,
@@ -59,9 +64,17 @@ button {
   cursor: pointer;
 }
 
-// Components
-@import "./components/header";
-@import "./components/footer";
+.container {
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 50px;
 
-// Pages
-@import "./pages/home";
+  @include laptop {
+    padding: 0 24px;
+  }
+}
+
+// Components
+@import "header";
+@import "footer";

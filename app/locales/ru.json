@@ -10,5 +10,10 @@
     "partners": "Партнеры",
     "white-paper": "White paper",
     "blog": "Блог"
-  }
+  },
+  "play": "Играть",
+  "not-found": "Страница не найдена",
+  "back-to-home": "Вернуться на главную",
+  "privacy-policy": "Политика конфиденциальности",
+  "cookie-policy": "Политика cookie"
 }

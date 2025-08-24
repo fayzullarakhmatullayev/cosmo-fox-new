@@ -1,15 +1,6 @@
-.video {
-  width: 650px;
-
-  video {
-    width: 100%;
-    display: block;
-  }
-}
-
 body {
   background: url("/images/main.jpg") no-repeat center center / cover;
-
+  position: relative;
   &::after {
     content: "";
     width: 100%;

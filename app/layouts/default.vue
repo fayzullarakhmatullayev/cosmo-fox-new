@@ -1,17 +1,21 @@
 <template>
-  <div class="app">
+  <div class="layout">
     <app-header />
-    <main class="app__main"><nuxt-page /></main>
+    <main>
+      <div class="container"><nuxt-page /></div>
+    </main>
     <app-footer />
   </div>
 </template>
 
 <style lang="scss">
-.app {
+.layout {
   display: flex;
   flex-direction: column;
   min-height: 100dvh;
-  &__main {
+  height: 100%;
+
+  main {
     flex: 1;
   }
 }

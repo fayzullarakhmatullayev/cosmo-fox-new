@@ -1,9 +1,5 @@
 <template>
-  <div class="home">
-    <div class="video">
-      <video src="/videos/title.mp4" loop autoplay muted></video>
-    </div>
-  </div>
+  <h2>Home</h2>
 </template>
 
 <script lang="ts" setup>
@@ -13,3 +9,7 @@ useHead({
   meta: [{ name: "description", content: "Main page" }]
 });
 </script>
+
+<style lang="scss">
+@import "~/assets/scss/home.scss";
+</style>

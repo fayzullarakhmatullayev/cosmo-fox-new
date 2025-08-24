@@ -1,42 +1,32 @@
 <template>
   <div class="not-found">
-    <h1>Oops! Page not found</h1>
+    <h1>404</h1>
 
-    <p>{{ error?.message }}</p>
-    <button class="btn" @click="navigateTo(`/${locale}`)">Back to home</button>
+    <p>{{ t("not-found") }}</p>
+    <ui-button @click="navigateTo(`/${locale}`)">{{ t("back-to-home") }}</ui-button>
   </div>
 </template>
 <script lang="ts" setup>
-const error = useError();
-
-const { locale } = useI18n();
+const { locale, t } = useI18n();
 </script>
 <style scoped>
 .not-found {
   text-align: center;
-  margin-top: 100px;
+  justify-content: center;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 40px;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .not-found h1 {
-  font-size: 3rem;
+  font-size: 5rem;
   color: #ff4c4c;
 }
 
 .not-found p {
-  font-size: 1.5rem;
-}
-
-.btn {
-  background-color: blueviolet;
-  color: #fff;
-  width: fit-content;
-  margin: 0 auto;
-  padding: 10px 12px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  font-size: 2rem;
 }
 </style>
