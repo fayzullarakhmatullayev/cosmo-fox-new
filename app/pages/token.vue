@@ -1,8 +1,5 @@
 <template>
   <h2>Token</h2>
-  <teleport to="body">
-    <bg-wrapper />
-  </teleport>
 </template>
 
 <script lang="ts" setup>

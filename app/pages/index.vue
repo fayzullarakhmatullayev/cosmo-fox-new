@@ -11,9 +11,6 @@
       <ui-button class="home__button" variant="large" href="#">{{ t("play") }}</ui-button>
     </div>
   </section>
-  <teleport to="body">
-    <bg-wrapper src="/images/home-bg.jpg" alt="home background" />
-  </teleport>
 </template>
 
 <script lang="ts" setup>
