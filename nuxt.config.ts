@@ -19,16 +19,6 @@ export default defineNuxtConfig({
           rel: "icon",
           type: "image/x-icon",
           href: "/images/logo.png"
-        },
-        {
-          rel: "prefetch",
-          as: "image",
-          href: "/images/home-bg.jpg"
-        },
-        {
-          rel: "preload",
-          as: "image",
-          href: "/images/all-bg.jpg"
         }
       ]
     }
