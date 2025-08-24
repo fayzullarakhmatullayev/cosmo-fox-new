@@ -8,4 +8,6 @@ useHead({
   title: t("nav.token"),
   meta: [{ name: "description", content: "Token page" }]
 });
+
+definePageMeta({ page: "token" });
 </script>

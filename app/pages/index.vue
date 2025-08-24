@@ -22,8 +22,5 @@ useHead({
   title: t("nav.home"),
   meta: [{ name: "description", content: "Main page" }]
 });
+definePageMeta({ page: "home" });
 </script>
-
-<style lang="scss">
-@import "~/assets/scss/home.scss";
-</style>

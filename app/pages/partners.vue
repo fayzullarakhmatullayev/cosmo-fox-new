@@ -8,4 +8,6 @@ useHead({
   title: t("nav.partners"),
   meta: [{ name: "description", content: "Partners page" }]
 });
+
+definePageMeta({ page: "partners" });
 </script>

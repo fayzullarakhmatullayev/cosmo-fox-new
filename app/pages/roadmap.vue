@@ -8,4 +8,6 @@ useHead({
   title: t("nav.roadmap"),
   meta: [{ name: "description", content: "Roadmap page" }]
 });
+
+definePageMeta({ page: "roadmap" });
 </script>
