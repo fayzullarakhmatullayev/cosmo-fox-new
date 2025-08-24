@@ -5,9 +5,9 @@ export default defineNuxtConfig({
   modules: ["@nuxt/eslint", "nuxt-svgo", "@nuxtjs/i18n", "@nuxt/image"],
 
   css: [
-    "swiper/css",
-    "swiper/css/pagination",
-    "swiper/css/navigation",
+    // "swiper/css",
+    // "swiper/css/pagination",
+    // "swiper/css/navigation",
     "~/assets/fonts/stylesheet.css",
     "~/assets/scss/main.scss"
   ],
