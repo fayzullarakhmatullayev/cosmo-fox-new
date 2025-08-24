@@ -33,6 +33,14 @@ const updateBodyClass = () => {
 
 onBeforeMount(updateBodyClass);
 watch(() => route.name, updateBodyClass);
+
+onMounted(() => {
+  const preloadImages = ["/images/home-bg.jpg", "/images/all-bg.jpg"];
+  preloadImages.forEach(src => {
+    const img = new Image();
+    img.src = src;
+  });
+});
 </script>
 
 <style lang="scss">
