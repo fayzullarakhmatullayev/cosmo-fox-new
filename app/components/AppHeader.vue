@@ -62,5 +62,3 @@ const handleLocaleChange = (code: "en" | "ru") => {
   isLocaleVisible.value = false;
 };
 </script>
-
-<style lang="scss"></style>
