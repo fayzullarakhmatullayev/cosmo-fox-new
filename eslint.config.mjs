@@ -10,6 +10,7 @@ export default withNuxt(eslintPluginPrettierRecommended, {
     "vue/require-default-prop": "off",
     "import/no-named-default": "off",
     "@typescript-eslint/no-empty-object-type": "off",
+    "vue/no-v-html": "off",
     "prettier/prettier": ["error", { endOfLine: "auto" }, { usePrettierrc: true }]
   }
 });

@@ -13,7 +13,6 @@
   display: flex;
   flex-direction: column;
   min-height: 100dvh;
-  height: 100%;
 
   main {
     flex: 1;

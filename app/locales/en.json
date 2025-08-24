@@ -15,5 +15,11 @@
   "not-found": "Page not found",
   "back-to-home": "Back to home",
   "privacy-policy": "Privacy policy",
-  "cookie-policy": "Cookie policy"
+  "cookie-policy": "Cookie policy",
+  "home": {
+    "title": "Drill. Loot. Repeat.\nThen fight for survival.",
+    "list1": "CosmoFox is a Telegram-native, multi-\n stage Web3 game.",
+    "list2": "Start as a space-mining fox — drilling\n planets, collecting crystals, and\n upgrading your gear.",
+    "list3": "More crystals = a bigger airdrop share."
+  }
 }
