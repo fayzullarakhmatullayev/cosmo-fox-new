@@ -13,10 +13,14 @@
 const route = useRoute();
 
 const imageSrc = computed(() => {
-  let imageSrc = "/images/all-bg.jpg";
+  let imageSrc = "";
+
   if (route.meta.page === "home") {
     imageSrc = "/images/home-bg.jpg";
+  } else {
+    imageSrc = "/images/all-bg.jpg";
   }
+
   return imageSrc;
 });
 
