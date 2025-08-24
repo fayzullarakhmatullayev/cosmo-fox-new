@@ -1,13 +1,26 @@
 <template>
   <div class="bg-wrapper">
-    <Transition name="fade" mode="out-in">
-      <NuxtImg :src="src" :alt="alt" format="webp" quality="90" class="bg-img" />
-    </Transition>
+    <NuxtImg alt="bg" :src="imageSrc" format="webp" quality="90" class="bg-img" />
   </div>
 </template>
 
 <script lang="ts" setup>
-const { src = "/images/all-bg.jpg", alt = "background" } = defineProps<{ src?: string; alt?: string }>();
+const route = useRoute();
+
+const images = ["/images/home-bg.jpg", "/images/all-bg.jpg"];
+
+const isIncludes = (pageName: string) => {
+  return String(route.meta.page)?.includes(pageName);
+};
+
+const imageSrc = computed(() => (isIncludes("home") ? images[0] : images[1]));
+
+onMounted(() => {
+  images.forEach(src => {
+    const img = new Image();
+    img.src = src;
+  });
+});
 </script>
 
 <style>
@@ -22,14 +35,5 @@ const { src = "/images/all-bg.jpg", alt = "background" } = defineProps<{ src?: s
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.3s ease;
-}
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
 }
 </style>
