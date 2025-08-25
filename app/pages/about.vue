@@ -1,12 +1,12 @@
 <template>
-  <div class="about">
+  <section class="about">
     <div class="about__left">
-      <nuxt-img src="/images/about-img.png" alt="about" format="webp" />
+      <nuxt-img src="/images/about-img.png" alt="about" format="webp" quality="80" />
     </div>
     <div class="about__right">
       <h2 class="about__title">
         <span>{{ t("about.title") }}</span>
-        <nuxt-img src="/images/about-line.png" alt="about-line" format="webp" />
+        <nuxt-img src="/images/about-line.png" alt="about-line" format="webp" quality="80" />
       </h2>
       <ul class="about__list">
         <li v-for="list in lists" :key="list">{{ t(list) }}</li>
@@ -14,12 +14,12 @@
 
       <div class="about__footer">
         <button class="about__play">
-          <nuxt-img src="/images/play.png" alt="play" format="webp" />
+          <nuxt-img src="/images/play.png" alt="play" format="webp" quality="80" />
         </button>
         <p>{{ t("about.watch") }}</p>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script lang="ts" setup>

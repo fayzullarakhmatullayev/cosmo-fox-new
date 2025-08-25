@@ -103,22 +103,16 @@ button {
   }
 }
 
-.fade-enter-active,
-.fade-leave-active {
-  transition:
-    opacity 0.5s ease,
-    transform 0.5s ease;
-  transition-delay: 0.5s;
-}
+.title {
+  font-size: 60px;
+  line-height: 1.1;
+  color: #fff;
+  text-align: center;
+  font-weight: 400;
 
-.fade-enter-from {
-  opacity: 0;
-  transform: translateY(10px);
-}
-
-.fade-leave-to {
-  opacity: 0;
-  transform: translateY(-10px);
+  @include laptop {
+    font-size: 50px;
+  }
 }
 
 // Components
@@ -128,3 +122,4 @@ button {
 // Pages
 @import "home";
 @import "about";
+@import "mine";

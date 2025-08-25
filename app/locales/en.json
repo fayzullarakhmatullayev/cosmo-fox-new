@@ -29,5 +29,25 @@
     "list3": "Phase 1 — a fast-paced clicker race: drill, loot\n and earn your share of the airdrop.",
     "list4": "Phase 2 — the game expands: deeper mechanics, new\n challenges, and fresh ways to use $Zylo.",
     "watch": "watch trailer"
+  },
+  "mine1": {
+    "title": "Diamond Dust",
+    "text1": "Common resource mined while\n drilling planets. ",
+    "text2": "Spent to upgrade and strengthen\n your drill, improving efficiency\n and unlocking new layers of progression."
+  },
+  "mine2": {
+    "title": "Ether Crystals",
+    "text1": "Premium resource with a small\n chance to drop while drilling.",
+    "text2": "Can be spent on loot boxes and\n purchases, or exchanged for\n $Zylo tokens during the Phase 1\n  airdrop."
+  },
+  "mine3": {
+    "title": "Drill",
+    "text1": "The Fox’s main tool for\n extracting resources from\n planets. ",
+    "text2": "Upgrade its parts to boost\n drilling power, speed, and gain\n access to deeper layers and\n hidden treasures."
+  },
+  "mine4": {
+    "title": "Ships",
+    "text1": "Essential for traveling between\n planets and star systems. ",
+    "text2": "Buy and upgrade ships to\n increase travel speed, improve\n energy regeneration, and expand\n your cosmic reach."
   }
 }

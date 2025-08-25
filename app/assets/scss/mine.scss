@@ -1,0 +1,135 @@
+.mine {
+  padding: 36px 0 56px;
+  .title {
+    margin-bottom: 40px;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 360px);
+    justify-content: center;
+    gap: 70px;
+
+    @include laptop {
+      grid-template-columns: repeat(4, 260px);
+      gap: 30px;
+    }
+  }
+  &__card {
+    &--picture {
+      position: relative;
+      width: 309px;
+      height: 364px;
+
+      @include laptop {
+        width: 240px;
+        height: 280px;
+      }
+
+      &.on-top {
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: 20px;
+
+        .mine__card--image img {
+          animation: upDown 2s ease-in-out infinite;
+        }
+      }
+      &.on-bottom {
+        margin-top: 40px;
+        margin-right: auto;
+        margin-left: 20px;
+
+        .mine__card--image img {
+          animation: downUp 2s ease-in-out infinite;
+        }
+      }
+    }
+
+    &--slot {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    &--image {
+      position: absolute;
+      height: auto;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%) scale(1.5);
+
+      @include laptop {
+        transform: translate(-50%, -25%) scale(1);
+        top: 25% !important;
+      }
+    }
+
+    &--title {
+      font-size: 25px;
+      line-height: 1.1;
+      text-align: center;
+      color: #37dd97;
+      font-weight: 400;
+      margin-bottom: 30px;
+
+      @include laptop {
+        font-size: 20px;
+      }
+    }
+
+    &--list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      @include laptop {
+        gap: 16px;
+      }
+      li {
+        font-family: var(--font-overpass);
+        font-size: 20px;
+        line-height: 1.1;
+        color: #fff;
+
+        letter-spacing: -0.8px;
+
+        @include laptop {
+          font-size: 18px;
+        }
+      }
+    }
+
+    &--2 {
+      .on-bottom {
+        margin-left: 25px;
+        margin-top: 66px;
+      }
+    }
+  }
+}
+
+@keyframes upDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes downUp {
+  0% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
