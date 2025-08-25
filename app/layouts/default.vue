@@ -31,8 +31,6 @@ watch(() => route.name, updateBodyClass);
   position: relative;
   main {
     flex: 1;
-    position: relative;
-    z-index: 10;
   }
 }
 </style>
