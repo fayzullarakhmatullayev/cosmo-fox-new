@@ -17,7 +17,7 @@ a {
   color: rgba(7, 30, 53, 1);
   padding: 13px 38px 14px;
   min-width: 182px;
-  background: linear-gradient(135deg, #69fee6, #2be7df, #23c8e0);
+  background: linear-gradient(135deg, #69fee6, #23c8e0);
   text-align: center;
   display: block;
   cursor: pointer;

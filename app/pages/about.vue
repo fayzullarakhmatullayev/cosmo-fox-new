@@ -5,24 +5,18 @@
     </div>
     <div class="about__right">
       <h2 class="about__title">
-        <span>ЧТО ТАКОЕ COSMOFOX</span>
+        <span>{{ t("about.title") }}</span>
         <nuxt-img src="/images/about-line.png" alt="about-line" format="webp" />
       </h2>
       <ul class="about__list">
-        <li>CosmoFox — это космическое приключение, которое постоянно растёт и меняется.</li>
-        <li>
-          Всё начинается с простой гонки за ресурсами, а со временем превращается в целую вселенную с новыми механиками,
-          более глубоким геймплеем и экономикой на $Zylo.
-        </li>
-        <li>Фаза 1 — динамичный кликер: буришь планеты, собираешь лут и зарабатываешь долю аирдропа.</li>
-        <li>Фаза 2 — игра раскрывается: больше механик, новые испытания и свежие способы использовать $Zylo.</li>
+        <li v-for="list in lists" :key="list">{{ t(list) }}</li>
       </ul>
 
       <div class="about__footer">
         <button class="about__play">
           <nuxt-img src="/images/play.png" alt="play" format="webp" />
         </button>
-        <p>посмотреть трейлер</p>
+        <p>{{ t("about.watch") }}</p>
       </div>
     </div>
   </div>
@@ -30,6 +24,8 @@
 
 <script lang="ts" setup>
 const { t } = useI18n();
+
+const lists = reactive(["about.list1", "about.list2", "about.list3", "about.list4"]);
 
 useHead({
   title: t("nav.about"),
