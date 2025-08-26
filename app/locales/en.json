@@ -49,5 +49,11 @@
     "title": "Ships",
     "text1": "Essential for traveling between\n planets and star systems. ",
     "text2": "Buy and upgrade ships to\n increase travel speed, improve\n energy regeneration, and expand\n your cosmic reach."
+  },
+  "token": {
+    "text1": "Use Zylo for upgrades, lootboxes, skins, and premium content",
+    "text2": "Stake Zylo for passive income and exclusive in-game bonuses",
+    "text3": "Earn Zylo in the airdrop by exchanging collected Crystals",
+    "text4": "Part of every Zylo spend is burned, increasing long-term scarcity"
   }
 }
