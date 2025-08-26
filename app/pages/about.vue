@@ -1,7 +1,7 @@
 <template>
   <section class="about">
     <div class="about__left">
-      <nuxt-img src="/images/about-img.png" alt="about" format="webp" quality="80" />
+      <nuxt-img src="/images/about-img.png" alt="about" format="webp" quality="70" />
     </div>
     <div class="about__right">
       <h2 class="about__title">

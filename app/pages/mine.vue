@@ -7,7 +7,7 @@
         <div v-if="mine.isOnTop" class="mine__card--picture on-top">
           <nuxt-img :src="mine.slot" alt="mine-slot" quality="60" format="webp" class="mine__card--slot" />
           <div class="mine__card--image" :style="{ width: `${mine.imageSize}px`, top: `${mine.top}px` }">
-            <nuxt-img :src="mine.image" alt="mine" quality="80" format="webp" />
+            <nuxt-img :src="mine.image" alt="mine" quality="60" format="webp" />
           </div>
         </div>
         <h3 class="mine__card--title">{{ t(mine.title) }}</h3>
@@ -18,7 +18,7 @@
           <nuxt-img :src="mine.slot" alt="mine-slot" quality="60" format="webp" class="mine__card--slot" />
 
           <div class="mine__card--image" :style="{ width: `${mine.imageSize}px`, top: `${mine.top}px` }">
-            <nuxt-img :src="mine.image" alt="mine" quality="80" format="webp" />
+            <nuxt-img :src="mine.image" alt="mine" quality="60" format="webp" />
           </div>
         </div>
       </div>

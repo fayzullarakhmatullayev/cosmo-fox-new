@@ -1,7 +1,21 @@
 <template>
   <div class="bg-wrapper">
-    <NuxtImg v-show="isIncludes('home')" alt="bg" src="/images/home-bg.jpg" format="webp" quality="80" class="bg-img" />
-    <NuxtImg v-show="!isIncludes('home')" alt="bg" src="/images/all-bg.jpg" format="webp" quality="80" class="bg-img" />
+    <nuxt-img
+      v-show="isIncludes('home')"
+      alt="bg"
+      src="/images/home-bg.jpg"
+      format="webp"
+      quality="80"
+      class="bg-img"
+    />
+    <nuxt-img
+      v-show="!isIncludes('home')"
+      alt="bg"
+      src="/images/all-bg.jpg"
+      format="webp"
+      quality="80"
+      class="bg-img"
+    />
   </div>
 </template>
 
