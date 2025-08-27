@@ -1,8 +1,15 @@
+<!-- Parent Component -->
 <template>
   <div class="token-charts">
     <h2 class="title">распределение токенов</h2>
     <div class="charts__wrapper">
-      <div class="chart-container"></div>
+      <div class="chart-container">
+        <div class="chart-top-layer">
+          <icon-chart-top-layer />
+        </div>
+
+        <token-pie-chart ref="pieChartRef" v-model:hovered-item="hoveredItem" :items="items" />
+      </div>
       <div class="table-container">
         <div class="table-inner">
           <table class="table">
@@ -14,19 +21,32 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="item in items" :key="item.id">
+              <tr class="top-border">
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr
+                v-for="item in items"
+                :key="item.id"
+                :class="{ active: hoveredItem?.id === item.id }"
+                @mouseenter="handleTableRowHover(item)"
+                @mouseleave="handleTableRowLeave()"
+              >
                 <td>
-                  <span
-                    class="table-color"
-                    :style="{ background: `linear-gradient(to right, ${item.colors[0]}, ${item.colors[1]})` }"
-                  />
-                  <p>{{ item.category }}</p>
+                  <div class="table-color-wrapper">
+                    <span
+                      class="table-color"
+                      :style="{ background: `linear-gradient(to right, ${item.colors[0]}, ${item.colors[1]})` }"
+                    />
+                    <p>{{ item.category }}</p>
+                  </div>
                 </td>
                 <td>
-                  <p>{{ item.tokens }}</p>
+                  <p class="table-tokens">{{ item.tokens }}</p>
                 </td>
                 <td>
-                  <p>{{ item.vesting }}</p>
+                  <p class="table-vesting">{{ item.vesting }}</p>
                 </td>
               </tr>
             </tbody>
@@ -36,13 +56,15 @@
           src="/images/token-border-left.png"
           alt="token-border"
           class="token-border token-border-left"
-          quality="40"
+          quality="60"
+          format="webp"
         />
         <nuxt-img
           src="/images/token-border-right.png"
           alt="token-border"
           class="token-border token-border-right"
-          quality="40"
+          quality="60"
+          format="webp"
         />
       </div>
     </div>
@@ -108,4 +130,15 @@ const items = computed(() => [
     vesting: "6-month cliff - 18-month linear vesting"
   }
 ]);
+
+const hoveredItem = ref<(typeof items.value)["0"] | null>(null);
+const pieChartRef = ref(null);
+
+const handleTableRowHover = (item: (typeof items.value)[0]) => {
+  hoveredItem.value = item;
+};
+
+const handleTableRowLeave = () => {
+  hoveredItem.value = null;
+};
 </script>

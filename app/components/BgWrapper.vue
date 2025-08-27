@@ -14,7 +14,7 @@
       src="/images/all-bg.jpg"
       format="webp"
       quality="80"
-      class="bg-img"
+      class="bg-img bg-all"
     />
   </div>
 </template>
@@ -39,6 +39,10 @@ const isIncludes = (pageName: string) => {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.bg-all {
+  position: fixed;
 }
 
 .fade-enter-active,
