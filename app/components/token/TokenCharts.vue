@@ -1,7 +1,7 @@
 <!-- Parent Component -->
 <template>
   <div class="token-charts">
-    <h2 class="title">распределение токенов</h2>
+    <h2 class="title">{{ $t("token_vesting") }}</h2>
     <div class="charts__wrapper">
       <div class="chart-container">
         <div class="chart-top-layer">

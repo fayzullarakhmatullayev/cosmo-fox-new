@@ -1,6 +1,6 @@
 <template>
   <div class="token">
-    <h2 class="title">токен zylo</h2>
+    <h2 class="title">{{ $t("token_zylo") }}</h2>
 
     <div class="token__wrapper">
       <div v-for="card in cards" :key="card.image" class="token__card">

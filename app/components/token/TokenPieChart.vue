@@ -1,4 +1,3 @@
-<!-- token-pie-chart.vue -->
 <template>
   <client-only>
     <div class="chart">
@@ -26,69 +25,60 @@ const props = defineProps<{
 const emit = defineEmits(["update:hoveredItem"]);
 const chartRef = ref(null);
 
-// Create series with gaps between slices
 const seriesWithGaps = computed(() => {
   const result: number[] = [];
-  const gapSize = 8; // Size of gap slices
+  const gapSize = 8;
 
   props.items.forEach((item, index) => {
     result.push(item.tokens);
-    // Add gap after each slice except the last one
+
     if (index < props.items.length - 1) {
       result.push(gapSize);
     }
   });
 
-  // Add final gap to close the circle
   result.push(gapSize);
 
   return result;
 });
 
-// Create colors array including transparent gaps
 const colorsWithGaps = computed(() => {
   const result: string[] = [];
 
   props.items.forEach((item, index) => {
     result.push(item.colors[0]!);
-    // Add transparent color for gap
+
     if (index < props.items.length - 1) {
       result.push("transparent");
     }
   });
 
-  // Add transparent color for final gap
   result.push("transparent");
 
   return result;
 });
 
-// Create gradient colors array including transparent gaps
 const gradientColorsWithGaps = computed(() => {
   const result: string[] = [];
 
   props.items.forEach((item, index) => {
     result.push(item.colors[1]!);
-    // Add transparent gradient for gap
+
     if (index < props.items.length - 1) {
       result.push("transparent");
     }
   });
 
-  // Add transparent gradient for final gap
   result.push("transparent");
 
   return result;
 });
 
-// Convert chart index to item index (accounting for gaps)
 const getItemIndexFromChartIndex = (chartIndex: number) => {
-  // Every odd index is a gap, every even index is an actual slice
-  if (chartIndex % 2 === 1) return null; // This is a gap
+  if (chartIndex % 2 === 1) return null;
   return Math.floor(chartIndex / 2);
 };
 
-// Method to simulate chart hover from external trigger
 const simulateChartHover = (itemIndex: number | null) => {
   if (!chartRef.value) return;
 
@@ -96,7 +86,6 @@ const simulateChartHover = (itemIndex: number | null) => {
   const chartElement = chartRef.value.$el;
   const allSlices = chartElement.querySelectorAll(".apexcharts-series path");
 
-  // Reset all slices
   allSlices.forEach((slice: HTMLElement) => {
     slice.style.transform = "scale(1)";
     slice.style.transformOrigin = "center";
@@ -114,7 +103,6 @@ const simulateChartHover = (itemIndex: number | null) => {
   }
 };
 
-// Watch for external hover changes (from table)
 watch(
   () => props.hoveredItem,
   newItem => {
@@ -127,7 +115,6 @@ watch(
   }
 );
 
-// Expose method to parent component
 defineExpose({
   simulateChartHover
 });
@@ -141,7 +128,6 @@ const options = computed(() => ({
         const chartIdx = config.dataPointIndex;
         const itemIndex = getItemIndexFromChartIndex(chartIdx);
 
-        // Ignore hover on gap slices
         if (itemIndex === null) return;
 
         const slice = chartContext.w.globals.dom.baseEl.querySelector(
@@ -159,7 +145,6 @@ const options = computed(() => ({
         const chartIdx = config.dataPointIndex;
         const itemIndex = getItemIndexFromChartIndex(chartIdx);
 
-        // Ignore hover on gap slices
         if (itemIndex === null) return;
 
         const slice = chartContext.w.globals.dom.baseEl.querySelector(
@@ -217,7 +202,6 @@ const options = computed(() => ({
     transition: transform 0.2s ease-out;
     transform-origin: center;
 
-    // Hide hover effects on transparent gap slices
     &[fill="transparent"] {
       pointer-events: none;
     }
@@ -226,7 +210,7 @@ const options = computed(() => ({
 
 .chart {
   .apexcharts-svg {
-    overflow: visible; // Allow expanded slices to be visible outside bounds
+    overflow: visible;
   }
 }
 </style>

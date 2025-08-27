@@ -1,6 +1,6 @@
 <template>
   <div class="partners">
-    <div class="title">наши партнеры</div>
+    <div class="title">{{ $t("parthers_title") }}</div>
 
     <div class="partners__wrapper">
       <div v-for="card in partners" :key="card.image" class="partners__card">
