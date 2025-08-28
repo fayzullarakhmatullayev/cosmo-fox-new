@@ -1,7 +1,14 @@
 <template>
   <client-only>
     <div class="chart">
-      <vue-apex-charts ref="chartRef" type="donut" :options="options" :series="seriesWithGaps" width="370" />
+      <vue-apex-charts
+        ref="chartRef"
+        type="donut"
+        :options="options"
+        :series="seriesWithGaps"
+        width="320"
+        height="320"
+      />
     </div>
   </client-only>
 </template>

@@ -8,7 +8,7 @@
           <nuxt-img :src="card.image" alt="token-img" quality="60" format="webp" class="token__card--image" />
           <h2 class="token__card--text">{{ t(card.text) }}</h2>
         </div>
-        <nuxt-img class="token__card--bg" src="/images/token-slot.png" alt="token" quality="60" format="webp" />
+        <nuxt-img class="token__card--bg" src="/images/token/token-slot.png" alt="token" quality="60" format="webp" />
       </div>
     </div>
     <ui-button variant="medium" class="token__button" href="#">
@@ -21,10 +21,10 @@
 const { t } = useI18n();
 
 const cards = computed(() => [
-  { image: "/images/token-1.png", text: "token.text1" },
-  { image: "/images/token-2.png", text: "token.text2" },
-  { image: "/images/token-3.png", text: "token.text3" },
-  { image: "/images/token-4.png", text: "token.text4" }
+  { image: "/images/token/token-1.png", text: "token.text1" },
+  { image: "/images/token/token-2.png", text: "token.text2" },
+  { image: "/images/token/token-3.png", text: "token.text3" },
+  { image: "/images/token/token-4.png", text: "token.text4" }
 ]);
 useHead({
   title: t("nav.token"),

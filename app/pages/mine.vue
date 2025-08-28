@@ -31,37 +31,37 @@ const { t } = useI18n();
 
 const mines = reactive([
   {
-    image: "/images/mine-1.png",
+    image: "/images/mine/mine-1.png",
     title: "mine1.title",
     text: ["mine1.text1", "mine1.text2"],
-    slot: "/images/mine-slot-1.png",
+    slot: "/images/mine/mine-slot-1.png",
     isOnTop: true,
     imageSize: 225,
     top: 13
   },
   {
-    image: "/images/mine-2.png",
+    image: "/images/mine/mine-2.png",
     title: "mine2.title",
     text: ["mine2.text1", "mine2.text2"],
-    slot: "/images/mine-slot-2.png",
+    slot: "/images/mine/mine-slot-2.png",
     isOnTop: false,
     imageSize: 225,
     top: 50
   },
   {
-    image: "/images/mine-3.png",
+    image: "/images/mine/mine-3.png",
     title: "mine3.title",
     text: ["mine3.text1", "mine3.text2"],
-    slot: "/images/mine-slot-4.png",
+    slot: "/images/mine/mine-slot-4.png",
     isOnTop: true,
     imageSize: 207,
     top: 32
   },
   {
-    image: "/images/mine-4.png",
+    image: "/images/mine/mine-4.png",
     title: "mine4.title",
     text: ["mine4.text1", "mine4.text2"],
-    slot: "/images/mine-slot-3.png",
+    slot: "/images/mine/mine-slot-3.png",
     isOnTop: false,
     imageSize: 207,
     top: 68

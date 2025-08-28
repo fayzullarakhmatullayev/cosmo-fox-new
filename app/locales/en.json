@@ -58,5 +58,8 @@
   },
   "parthers_title": "our partners",
   "token_vesting": "token vesting",
-  "token_zylo": "zylo token"
+  "token_zylo": "zylo token",
+  "roadmap": {
+    "title": "roadmap"
+  }
 }

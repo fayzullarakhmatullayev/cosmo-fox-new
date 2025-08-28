@@ -13,7 +13,7 @@
           :style="{ height: `${card.height}px` }"
         />
         <nuxt-img
-          src="/images/partner-slot.png"
+          src="/images/partners/partner-slot.png"
           alt="partners-slot"
           quality="60"
           format="webp"
@@ -34,10 +34,10 @@
 const { t } = useI18n();
 
 const partners = computed(() => [
-  { image: "/images/partner-1.png", height: 47 },
-  { image: "/images/partner-2.png", height: 43 },
-  { image: "/images/partner-3.png", height: 56 },
-  { image: "/images/partner-4.png", height: 54 }
+  { image: "/images/partners/partner-1.png", height: 47 },
+  { image: "/images/partners/partner-2.png", height: 43 },
+  { image: "/images/partners/partner-3.png", height: 56 },
+  { image: "/images/partners/partner-4.png", height: 54 }
 ]);
 
 useHead({
