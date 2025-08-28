@@ -238,7 +238,7 @@
   .ship {
     position: absolute;
     top: 64%;
-    left: 23%;
+    left: 24%;
     width: 71px;
     height: 71px;
     animation: shipMove 2s linear forwards;
@@ -249,7 +249,7 @@
 @keyframes shipMove {
   0% {
     top: 64%;
-    left: 23%;
+    left: 24%;
   }
   50% {
     top: 62%;
