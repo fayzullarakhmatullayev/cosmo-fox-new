@@ -29,6 +29,9 @@
           </div>
         </div>
       </div>
+      <div class="ship">
+        <nuxt-img src="/images/roadmap/ship.png" alt="ship" quality="80" format="webp" />
+      </div>
     </div>
   </section>
 </template>
