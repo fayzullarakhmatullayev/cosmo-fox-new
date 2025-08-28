@@ -1,6 +1,6 @@
 .roadmap {
   position: relative;
-  padding: 36px 40px;
+  padding: 36px 0 80px;
 
   .title {
     margin-bottom: 27px;
@@ -8,33 +8,52 @@
 
   &-wrapper {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    max-width: 1666px;
+    width: 100%;
+    margin: 0 auto;
+    min-height: 640px;
   }
 
   &-item {
     display: flex;
     flex-direction: column;
     position: relative;
-    min-height: 681px;
+    flex: 1;
+    &.top {
+      justify-content: flex-start;
+    }
+    &.bottom {
+      justify-content: flex-end;
+    }
 
     .planet-wrapper {
+      position: relative;
+      min-height: 200px;
+    }
+
+    .planet-line {
       position: absolute;
 
       img {
-        width: unset;
-        height: unset;
         object-fit: contain;
       }
     }
 
-    .card {
+    .planet-image {
       position: absolute;
-      top: 0;
-      width: 222px;
-      height: 137px;
+
+      img {
+        object-fit: contain;
+      }
+    }
+
+    .planet-card {
+      position: absolute;
+      width: 226px;
+      height: 141px;
       padding: 27px 10px 24px;
       text-align: center;
+      z-index: 5;
 
       h3 {
         font-size: 24px;
@@ -49,8 +68,10 @@
         line-height: 1.1;
         font-family: var(--font-overpass);
         font-weight: 400;
-        letter-spacing: -0.2px;
+        letter-spacing: -0.6px;
         color: white;
+        white-space: pre-line;
+        text-transform: uppercase;
       }
 
       .roadmap-slot {
@@ -60,6 +81,156 @@
         width: 100%;
         height: 100%;
         z-index: -1;
+      }
+    }
+
+    &.planet-1 {
+      .planet-image {
+        width: 343px;
+        top: 38px;
+        left: -53px;
+      }
+      .planet-card {
+        top: 0;
+        left: 3px;
+      }
+
+      .planet-line {
+        bottom: calc(-100% - 61px);
+        right: -38px;
+        height: 205px;
+      }
+    }
+    &.planet-2 {
+      .planet-image {
+        width: 346px;
+        top: -154px;
+        left: -77px;
+      }
+      .planet-card {
+        top: 37px;
+        left: -6px;
+      }
+
+      .planet-line {
+        bottom: 183px;
+        right: -77px;
+        height: 161px;
+      }
+    }
+    &.planet-3 {
+      .planet-image {
+        width: 339px;
+        top: 81px;
+        left: -68px;
+      }
+      .planet-card {
+        top: 47px;
+        left: -14px;
+        padding-top: 42px;
+      }
+
+      .planet-line {
+        bottom: calc(-100% - 58px);
+        right: -25px;
+        height: 164px;
+      }
+    }
+    &.planet-4 {
+      .planet-image {
+        width: 346px;
+        top: -98px;
+        left: -91px;
+      }
+      .planet-card {
+        bottom: -43px;
+        left: -32px;
+      }
+
+      .planet-line {
+        bottom: 181px;
+        right: -39px;
+        height: 220px;
+      }
+    }
+    &.planet-5 {
+      .planet-image {
+        width: 339px;
+        top: 36px;
+        left: -93px;
+      }
+      .planet-card {
+        padding-top: 41px;
+        top: 5px;
+        left: -36px;
+      }
+
+      .planet-line {
+        bottom: calc(-100% - 60px);
+        right: 11px;
+        height: 225px;
+      }
+    }
+    &.planet-6 {
+      .planet-image {
+        width: 343px;
+        top: -155px;
+        left: -128px;
+      }
+      .planet-card {
+        top: 37px;
+        left: -51px;
+      }
+
+      .planet-line {
+        bottom: 182px;
+        right: -15px;
+        height: 172px;
+      }
+    }
+    &.planet-7 {
+      .planet-image {
+        width: 341px;
+        top: 81px;
+        left: -125px;
+      }
+      .planet-card {
+        top: 47px;
+        left: -60px;
+      }
+
+      .planet-line {
+        bottom: calc(-100% - 60px);
+        right: 13px;
+        height: 168px;
+      }
+    }
+    &.planet-8 {
+      .planet-image {
+        width: 342px;
+        top: -96px;
+        left: -140px;
+      }
+      .planet-card {
+        top: 95px;
+        left: -74px;
+      }
+
+      .planet-line {
+        bottom: 182px;
+        right: 6px;
+        height: 223px;
+      }
+    }
+    &.planet-9 {
+      .planet-image {
+        width: 341px;
+        top: 37px;
+        left: -136px;
+      }
+      .planet-card {
+        top: 3px;
+        left: -81px;
       }
     }
   }
