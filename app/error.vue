@@ -5,6 +5,7 @@
     <p>{{ t("not-found") }}</p>
     <ui-button @click="navigateTo(`/${locale}`)">{{ t("back-to-home") }}</ui-button>
   </div>
+  <bg-wrapper />
 </template>
 <script lang="ts" setup>
 const { locale, t } = useI18n();

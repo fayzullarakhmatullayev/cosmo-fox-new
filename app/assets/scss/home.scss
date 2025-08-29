@@ -1,13 +1,28 @@
 .home {
+  &__wrapper {
+    @include tabletLg {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
   &__video {
     position: relative;
     width: 900px;
     height: 333px;
     overflow: hidden;
+    z-index: -1;
 
     @include laptop {
       width: 750px;
       height: 280px;
+    }
+
+    @include mobile {
+      width: 500px;
+      height: 182px;
+      margin: 0 auto;
     }
 
     video {
@@ -16,6 +31,11 @@
       top: 0;
       left: -64px;
       display: block;
+
+      @include tabletLg {
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
   }
 
@@ -29,6 +49,11 @@
     @include laptop {
       margin-left: 45px;
     }
+
+    @include tabletLg {
+      margin: 0 auto;
+      padding-bottom: 95px;
+    }
   }
 
   &__title {
@@ -37,6 +62,11 @@
     line-height: 1.1;
     margin-bottom: 35px;
     white-space: pre-line;
+
+    @include mobile {
+      font-size: 18px;
+      margin-bottom: 17px;
+    }
   }
 
   &__list {
@@ -46,9 +76,18 @@
     margin-bottom: 35px;
     margin-left: -13px;
 
-    @include laptop {
+    @include tabletLg {
       margin-left: 0;
       gap: 20px;
+    }
+
+    @include mobile {
+      gap: 14px;
+
+      max-width: 290px;
+      width: 100%;
+      align-items: center;
+      margin: 0 auto 17px;
     }
 
     li {
@@ -57,19 +96,28 @@
       font-weight: 600;
       color: rgba(194, 211, 230, 1);
       white-space: pre-line;
-    }
 
-    @include laptop {
-      gap: 15px;
-      margin-bottom: 25px;
+      @include mobile {
+        font-size: 12px;
+        line-height: 1.1;
+        &:not(:first-child) {
+          white-space: unset;
+        }
+      }
     }
   }
 
   &__button {
     max-width: 300px;
     margin: 0 auto;
-    @include laptop {
+    @include tabletLg {
       max-width: 250px;
+    }
+
+    @include mobile {
+      font-size: 18px !important;
+      padding: 15px 15px 19px !important;
+      max-width: 165px;
     }
   }
 }

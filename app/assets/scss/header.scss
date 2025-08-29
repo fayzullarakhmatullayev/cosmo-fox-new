@@ -6,9 +6,15 @@
     padding: 43px 33px 33px 24px;
 
     border-bottom: 2px solid #fff;
+    position: relative;
+    z-index: 30;
 
     @include laptop {
       padding: 33px 10px 23px 12px;
+    }
+
+    @include mobile {
+      padding: 36px 16px 13px 7px;
     }
   }
 
@@ -23,10 +29,19 @@
 
     &--logo {
       width: 35px;
+
+      @include mobile {
+        width: 24px;
+        height: 29px;
+      }
     }
     &--links {
       display: flex;
       align-items: center;
+
+      @include tabletLg {
+        display: none;
+      }
 
       a {
         font-size: 20px;
@@ -104,12 +119,32 @@
     @include laptop {
       gap: 30px;
     }
+
+    @include mobile {
+      gap: 35px;
+    }
+
+    &--btn {
+      @include tabletLg {
+        order: 2;
+      }
+
+      @include mobile {
+        font-size: 12px !important;
+        min-width: 96px !important;
+        padding: 7px 10px 9px !important;
+      }
+    }
   }
 
   &__lang {
     display: flex;
     align-items: center;
     position: relative;
+
+    @include tabletLg {
+      order: 1;
+    }
     &--selected {
       display: flex;
       align-items: center;
@@ -119,6 +154,10 @@
       svg {
         width: 19px;
         margin-top: 2px;
+      }
+
+      @include tabletLg {
+        display: none;
       }
     }
 
@@ -138,6 +177,12 @@
         top: 58px;
       }
 
+      @include tabletLg {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 60px;
+      }
+
       button {
         background: none;
         font-size: 20px;
@@ -147,5 +192,26 @@
         }
       }
     }
+
+    &--icon {
+      display: none;
+      width: 23px;
+      height: 23px;
+      cursor: pointer;
+      @include tabletLg {
+        display: block;
+      }
+    }
+  }
+
+  &__burger {
+    @include tabletLg {
+      display: block;
+      order: 3;
+    }
+    width: 34px;
+    height: 24px;
+    cursor: pointer;
+    display: none;
   }
 }

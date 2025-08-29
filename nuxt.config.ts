@@ -19,22 +19,15 @@ export default defineNuxtConfig({
           rel: "icon",
           type: "image/x-icon",
           href: "/images/logo.png"
-        },
-        {
-          rel: "prefetch",
-          type: "image",
-          href: "/images/logo.png"
-        },
-        {
-          rel: "prefetch",
-          as: "image",
-          href: "/images/home-bg.jpg"
-        },
-        {
-          rel: "prefetch",
-          as: "image",
-          href: "/images/all-bg.jpg"
         }
+      ],
+      meta: [
+        {
+          name: "viewport",
+          content: "width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+        },
+        { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
+        { name: "format-detection", content: "telephone=no" }
       ]
     }
   },
