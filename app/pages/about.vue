@@ -12,13 +12,16 @@
         <li v-for="list in lists" :key="list">{{ t(list) }}</li>
       </ul>
 
-      <div class="about__footer">
+      <div class="about__footer" @click="isShow = true">
         <button class="about__play">
           <nuxt-img src="/images/about/play.png" alt="play" format="webp" quality="80" />
         </button>
         <p>{{ t("about.watch") }}</p>
       </div>
     </div>
+    <transition name="fade" mode="out-in">
+      <youtube-dialog v-if="isShow" @close="isShow = false" />
+    </transition>
   </section>
 </template>
 
@@ -26,7 +29,7 @@
 const { t } = useI18n();
 
 const lists = reactive(["about.list1", "about.list2", "about.list3", "about.list4"]);
-
+const isShow = ref(false);
 useHead({
   title: t("nav.about"),
   meta: [{ name: "description", content: "About page" }]

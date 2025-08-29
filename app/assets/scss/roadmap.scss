@@ -1,5 +1,4 @@
 .roadmap {
-  position: relative;
   padding: 36px 0 80px;
 
   .title {
@@ -33,6 +32,7 @@
 
     .planet-line {
       position: absolute;
+      z-index: -1;
 
       img {
         object-fit: contain;

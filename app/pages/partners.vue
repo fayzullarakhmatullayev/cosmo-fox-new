@@ -1,5 +1,5 @@
 <template>
-  <div class="partners">
+  <section class="partners">
     <div class="title">{{ $t("parthers_title") }}</div>
 
     <div class="partners__wrapper">
@@ -27,7 +27,7 @@
       <a href="#"><span>tokenomic</span> <icon-link-white /></a>
       <a href="#"><span>blog</span> <icon-link-white /></a>
     </div>
-  </div>
+  </section>
 </template>
 
 <script lang="ts" setup>

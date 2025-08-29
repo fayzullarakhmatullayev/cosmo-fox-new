@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <section>
     <token-cards />
     <token-charts />
-  </div>
+  </section>
 </template>
 
 <script lang="ts" setup>
