@@ -27,6 +27,19 @@
       <a href="#"><span>tokenomic</span> <icon-link-white /></a>
       <a href="#"><span>blog</span> <icon-link-white /></a>
     </div>
+
+    <div class="partners__social footer__social">
+      <a
+        v-for="social in socials"
+        :key="social.name"
+        :href="social.link"
+        class="footer__social--item"
+        :style="{ width: `${social.width}px` }"
+      >
+        <component :is="`icon-${social.icon}`" :style="{ width: `${social.width}px` }" />
+        <span>{{ social.name }}</span>
+      </a>
+    </div>
   </section>
 </template>
 
@@ -38,6 +51,13 @@ const partners = computed(() => [
   { image: "/images/partners/partner-2.png", height: 43 },
   { image: "/images/partners/partner-3.png", height: 56 },
   { image: "/images/partners/partner-4.png", height: 54 }
+]);
+
+const socials = reactive([
+  { icon: "telegram", name: "chat", width: 42, link: "#" },
+  { icon: "telegram", name: "news", width: 42, link: "#" },
+  { icon: "discord", name: "discord", width: 48, link: "#" },
+  { icon: "twitter", name: "x.com", width: 35, link: "#" }
 ]);
 
 useHead({

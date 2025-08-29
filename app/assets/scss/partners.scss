@@ -1,7 +1,19 @@
 .partners {
   padding: 37px 0;
+
+  @include mobile {
+    padding-top: 20px;
+  }
   .title {
     margin-bottom: 106px;
+
+    @include laptopSm {
+      margin-bottom: 50px;
+    }
+
+    @include mobile {
+      margin-bottom: 44px;
+    }
   }
 
   &__wrapper {
@@ -15,6 +27,17 @@
       grid-template-columns: repeat(4, 260px);
       gap: 30px;
     }
+    @include laptopSm {
+      grid-template-columns: repeat(2, 260px);
+      gap: 30px;
+      margin-bottom: 50px;
+    }
+
+    @include mobile {
+      grid-template-columns: repeat(2, 129px);
+      gap: 25px 35px;
+      margin-bottom: 60px;
+    }
   }
 
   &__card {
@@ -22,6 +45,10 @@
     position: relative;
     @include laptop {
       height: 130px;
+    }
+
+    @include mobile {
+      height: 68px;
     }
     display: flex;
     justify-content: center;
@@ -38,6 +65,10 @@
         height: 100%;
         object-fit: cover;
       }
+
+      @include mobile {
+        transform: scaleX(-1);
+      }
     }
 
     &--image {
@@ -48,6 +79,9 @@
 
       @include laptop {
         scale: 0.8;
+      }
+      @include mobile {
+        scale: 0.4;
       }
     }
   }
@@ -60,6 +94,12 @@
 
     @include laptop {
       gap: 60px;
+    }
+
+    @include laptopSm {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      gap: 37px 68px;
     }
 
     a {
@@ -80,6 +120,40 @@
         svg {
           width: 18px;
           height: 18px;
+        }
+      }
+
+      @include laptopSm {
+        justify-content: center;
+      }
+
+      @include mobile {
+        font-size: 14px;
+
+        svg {
+          width: 12px;
+          height: 12px;
+        }
+      }
+    }
+  }
+
+  &__social {
+    display: none;
+    @include tabletLg {
+      margin-top: 60px;
+      display: flex;
+      justify-content: center;
+      color: #fff;
+    }
+
+    @include mobile {
+      gap: 37px;
+      .footer__social--item {
+        gap: 9px;
+
+        span {
+          font-size: 12px;
         }
       }
     }

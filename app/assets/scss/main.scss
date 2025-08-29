@@ -113,6 +113,14 @@ button {
   @include laptop {
     font-size: 50px;
   }
+
+  @include tabletLg {
+    font-size: 40px;
+  }
+
+  @include mobile {
+    font-size: 30px;
+  }
 }
 
 .bg-wrapper {

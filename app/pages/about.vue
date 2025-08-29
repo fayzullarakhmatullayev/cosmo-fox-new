@@ -1,7 +1,14 @@
 <template>
   <section class="about">
     <div class="about__left">
-      <nuxt-img src="/images/about/about-img.png" alt="about" format="webp" quality="70" />
+      <nuxt-img src="/images/about/about-img.png" alt="about" format="webp" quality="70" class="about__img--desktop" />
+      <nuxt-img
+        src="/images/about/about-img-mobile.png"
+        alt="about"
+        format="webp"
+        quality="70"
+        class="about__img--mobile"
+      />
     </div>
     <div class="about__right">
       <h2 class="about__title">
