@@ -3,14 +3,17 @@
     <h2 class="title">{{ $t("token_zylo") }}</h2>
 
     <div class="token__wrapper">
-      <div v-for="card in cards" :key="card.image" class="token__card">
-        <div class="token__card--content">
-          <nuxt-img :src="card.image" alt="token-img" quality="60" format="webp" class="token__card--image" />
-          <h2 class="token__card--text">{{ t(card.text) }}</h2>
-        </div>
-        <nuxt-img class="token__card--bg" src="/images/token/token-slot.png" alt="token" quality="60" format="webp" />
-      </div>
+      <token-card v-for="card in cards" :key="card.image" :card="card" />
     </div>
+
+    <div class="token__swiper">
+      <swiper-container :items="cards">
+        <template #item="{ item }">
+          <token-card :card="item" />
+        </template>
+      </swiper-container>
+    </div>
+
     <ui-button variant="medium" class="token__button" href="#">
       <span>white paper <icon-link /></span>
     </ui-button>

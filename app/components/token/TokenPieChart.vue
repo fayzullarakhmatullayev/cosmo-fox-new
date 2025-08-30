@@ -6,8 +6,8 @@
         type="donut"
         :options="options"
         :series="seriesWithGaps"
-        width="320"
-        height="320"
+        :width="chartSize"
+        :height="chartSize"
       />
     </div>
   </client-only>
@@ -27,10 +27,13 @@ type ItemType = {
 const props = defineProps<{
   items: ItemType[];
   hoveredItem: ItemType | null;
+  isMobile: boolean;
 }>();
 
 const emit = defineEmits(["update:hoveredItem"]);
 const chartRef = ref(null);
+
+const chartSize = computed(() => (props.isMobile ? 160 : 320));
 
 const seriesWithGaps = computed(() => {
   const result: number[] = [];

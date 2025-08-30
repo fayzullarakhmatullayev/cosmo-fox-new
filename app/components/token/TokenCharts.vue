@@ -11,7 +11,13 @@
           <icon-chart-inner-layer />
         </div>
 
-        <token-pie-chart ref="pieChartRef" v-model:hovered-item="hoveredItem" :items="items" />
+        <token-pie-chart
+          ref="pieChartRef"
+          :key="`${items.length}-${isMobileScreen}`"
+          v-model:hovered-item="hoveredItem"
+          :items="items"
+          :is-mobile="isMobileScreen"
+        />
       </div>
       <div class="table-container">
         <div class="table-inner">
@@ -136,6 +142,7 @@ const items = computed(() => [
 
 const hoveredItem = ref<(typeof items.value)["0"] | null>(null);
 const pieChartRef = ref(null);
+const screenWidth = ref(0);
 
 const handleTableRowHover = (item: (typeof items.value)[0]) => {
   hoveredItem.value = item;
@@ -144,4 +151,19 @@ const handleTableRowHover = (item: (typeof items.value)[0]) => {
 const handleTableRowLeave = () => {
   hoveredItem.value = null;
 };
+
+const handleResize = () => {
+  screenWidth.value = window.innerWidth;
+};
+
+const isMobileScreen = computed(() => screenWidth.value < 576);
+
+onMounted(() => {
+  handleResize();
+  window.addEventListener("resize", handleResize);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("resize", handleResize);
+});
 </script>

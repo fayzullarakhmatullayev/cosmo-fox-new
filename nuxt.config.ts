@@ -4,13 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@nuxt/eslint", "nuxt-svgo", "@nuxtjs/i18n", "@nuxt/image"],
 
-  css: [
-    // "swiper/css",
-    // "swiper/css/pagination",
-    // "swiper/css/navigation",
-    "~/assets/fonts/stylesheet.css",
-    "~/assets/scss/main.scss"
-  ],
+  css: ["~/assets/fonts/stylesheet.css", "~/assets/scss/main.scss"],
 
   app: {
     head: {

@@ -1,3 +1,9 @@
+.page-mine {
+  .container {
+    padding: 0;
+  }
+}
+
 .mine {
   padding: 36px 0 56px;
   .title {
@@ -11,39 +17,101 @@
     gap: 70px;
 
     @include laptop {
-      grid-template-columns: repeat(4, 260px);
+      grid-template-columns: repeat(4, 300px);
       gap: 30px;
     }
-  }
-  &__card {
-    &--picture {
-      position: relative;
-      width: 309px;
-      height: 364px;
 
+    @media (max-width: 1320px) {
+      display: none;
+    }
+
+    .mine__card--title {
+      @include laptop {
+        font-size: 20px;
+      }
+    }
+
+    .mine__card--list {
+      @include laptop {
+        gap: 16px;
+      }
+      li {
+        @include laptop {
+          font-size: 18px;
+        }
+      }
+    }
+
+    .mine__card--picture {
       @include laptop {
         width: 240px;
         height: 280px;
       }
+    }
 
-      &.on-top {
+    .mine__card--image {
+      @include laptop {
+        transform: translate(-50%, -25%) scale(1);
+        top: 25% !important;
+      }
+    }
+  }
+  &__card {
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 1320px) {
+      max-width: 360px;
+      min-height: 750px;
+      padding-bottom: 26px;
+    }
+
+    @include mobile {
+      min-height: 670px;
+    }
+
+    &.on-top {
+      .mine__card--content {
+        order: 2;
+      }
+      .mine__card--picture {
+        order: 1;
         margin-bottom: 20px;
         margin-left: auto;
         margin-right: 20px;
 
-        .mine__card--image img {
+        @media (max-width: 1320px) {
+          margin: 0 auto 44px;
+        }
+      }
+
+      .mine__card--image {
+        img {
           animation: upDown 2s ease-in-out infinite;
         }
       }
-      &.on-bottom {
+    }
+    &.on-bottom {
+      .mine__card--content {
+        order: 1;
+      }
+      .mine__card--picture {
+        order: 2;
         margin-top: 40px;
         margin-right: auto;
         margin-left: 20px;
-
-        .mine__card--image img {
+      }
+      .mine__card--image {
+        img {
           animation: downUp 2s ease-in-out infinite;
         }
       }
+    }
+
+    &--picture {
+      position: relative;
+      width: 309px;
+      height: 364px;
     }
 
     &--slot {
@@ -60,11 +128,6 @@
       position: absolute;
       left: 50%;
       transform: translateX(-50%) scale(1.5);
-
-      @include laptop {
-        transform: translate(-50%, -25%) scale(1);
-        top: 25% !important;
-      }
     }
 
     &--title {
@@ -75,7 +138,11 @@
       font-weight: 400;
       margin-bottom: 30px;
 
-      @include laptop {
+      @media (max-width: 1320px) {
+        margin-bottom: 21px;
+      }
+
+      @include mobile {
         font-size: 20px;
       }
     }
@@ -85,9 +152,6 @@
       flex-direction: column;
       gap: 20px;
 
-      @include laptop {
-        gap: 16px;
-      }
       li {
         font-family: var(--font-overpass);
         font-size: 20px;
@@ -96,17 +160,24 @@
 
         letter-spacing: -0.8px;
 
-        @include laptop {
-          font-size: 18px;
+        @include mobile {
+          font-size: 15px;
         }
       }
     }
 
     &--2 {
-      .on-bottom {
+      &.on-bottom {
         margin-left: 25px;
         margin-top: 66px;
       }
+    }
+  }
+
+  &__swiper {
+    display: none;
+    @media (max-width: 1320px) {
+      display: block;
     }
   }
 }

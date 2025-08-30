@@ -1,4 +1,9 @@
 .header {
+  .container {
+    @include mobile {
+      padding: 0 16px !important;
+    }
+  }
   &__wrapper {
     display: flex;
     align-items: center;
