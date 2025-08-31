@@ -24,15 +24,13 @@
       height: 182px;
       margin: 0 auto;
     }
-
+    img,
     video {
       background: transparent !important;
       background-color: transparent !important;
 
       border: none;
       outline: none;
-
-      filter: contrast(1.2) brightness(1.1) saturate(1.2);
 
       width: 100%;
       position: absolute;

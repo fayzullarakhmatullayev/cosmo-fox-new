@@ -2,10 +2,9 @@
   <section class="home">
     <div class="home__wrapper">
       <div class="home__video">
-        <video autoplay loop muted playsinline preload="auto" src="/videos/title.mp4">
+        <img v-if="isIOS()" src="/images/title-fallback.png" alt="Video fallback" />
+        <video v-else autoplay loop muted playsinline preload="auto" src="/videos/title.mp4">
           <source src="/videos/title.mp4" type="video/mp4" />
-
-          <img src="/images/title-fallback.png" alt="Video fallback" />
         </video>
       </div>
       <div class="home__content">
@@ -29,4 +28,8 @@ useHead({
   meta: [{ name: "description", content: "Main page" }]
 });
 definePageMeta({ page: "home" });
+
+function isIOS() {
+  return /iPad|iPhone|iPod/.test(navigator.userAgent);
+}
 </script>
