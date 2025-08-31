@@ -75,6 +75,7 @@ const handleLinkClick = () => {
   setTimeout(() => {
     isMenuVisible.value = false;
     document.body.style.overflow = "unset";
+    document.body.style.overflowX = "hidden";
   }, 100);
 };
 
@@ -86,6 +87,7 @@ const handleBurgerClick = () => {
     document.body.style.overflow = "hidden";
   } else {
     document.body.style.overflow = "unset";
+    document.body.style.overflowX = "hidden";
   }
 };
 </script>
