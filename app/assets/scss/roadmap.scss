@@ -393,6 +393,10 @@
           width: 94px;
           left: 109px;
         }
+
+        @include mobileSm {
+          left: 85px;
+        }
       }
 
       &-3 {
@@ -402,6 +406,10 @@
         @include tabletSm {
           width: 97px;
           right: 100px;
+        }
+
+        @include mobileSm {
+          right: 76px;
         }
       }
       &-4 {
@@ -428,6 +436,10 @@
           width: 89px;
           left: 109px;
         }
+
+        @include mobileSm {
+          left: 84px;
+        }
       }
       &-7 {
         width: 354px;
@@ -436,6 +448,10 @@
         @include tabletSm {
           width: 179px;
           right: 18px;
+        }
+
+        @include mobileSm {
+          right: -12px;
         }
       }
       &-8 {
