@@ -2,16 +2,9 @@
   <section class="home">
     <div class="home__wrapper">
       <div class="home__video">
-        <video
-          src="/videos/title.mp4"
-          autoplay
-          loop
-          muted
-          playsinline
-          preload="metadata"
-          webkit-playsinline
-          x-webkit-airplay="allow"
-        />
+        <video autoplay loop muted playsinline preload="auto">
+          <source src="/videos/title.mp4" type="video/mp4" />
+        </video>
       </div>
       <div class="home__content">
         <h1 class="home__title">{{ t("home.title") }}</h1>
