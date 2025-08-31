@@ -54,6 +54,10 @@
         transform: translateX(-50%);
       }
     }
+
+    img {
+      object-fit: contain;
+    }
   }
 
   &__content {
