@@ -2,7 +2,11 @@
   <section class="home">
     <div class="home__wrapper">
       <div class="home__video">
-        <video autoplay loop muted playsinline preload="auto" src="/videos/title.mp4"></video>
+        <video autoplay loop muted playsinline preload="auto" src="/videos/title.mp4">
+          <source src="/videos/title.mp4" type="video/mp4" />
+
+          <img src="/images/title-fallback.png" alt="Video fallback" />
+        </video>
       </div>
       <div class="home__content">
         <h1 class="home__title">{{ t("home.title") }}</h1>
