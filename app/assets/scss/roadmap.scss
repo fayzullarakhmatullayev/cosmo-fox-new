@@ -11,6 +11,165 @@
     width: 100%;
     margin: 0 auto;
     min-height: 640px;
+    position: relative;
+
+    @include tabletLg {
+      display: none;
+    }
+
+    .planet-1 {
+      .planet-image {
+        width: 343px;
+        top: 38px;
+        left: -53px;
+      }
+      .planet-card {
+        top: 0;
+        left: 3px;
+      }
+
+      .planet-line {
+        bottom: calc(-100% - 61px);
+        right: -38px;
+        height: 205px;
+      }
+    }
+    .planet-2 {
+      .planet-image {
+        width: 346px;
+        top: -154px;
+        left: -77px;
+      }
+      .planet-card {
+        top: 37px;
+        left: -6px;
+      }
+
+      .planet-line {
+        bottom: 183px;
+        right: -77px;
+        height: 161px;
+      }
+    }
+    .planet-3 {
+      .planet-image {
+        width: 339px;
+        top: 81px;
+        left: -68px;
+      }
+      .planet-card {
+        top: 47px;
+        left: -14px;
+        padding-top: 42px;
+      }
+
+      .planet-line {
+        bottom: calc(-100% - 58px);
+        right: -25px;
+        height: 164px;
+
+        @include laptopSm {
+          right: -70px;
+        }
+      }
+    }
+    .planet-4 {
+      .planet-image {
+        width: 346px;
+        top: -98px;
+        left: -91px;
+      }
+      .planet-card {
+        bottom: -43px;
+        left: -32px;
+      }
+
+      .planet-line {
+        bottom: 181px;
+        right: -39px;
+        height: 220px;
+      }
+    }
+    .planet-5 {
+      .planet-image {
+        width: 339px;
+        top: 36px;
+        left: -93px;
+      }
+      .planet-card {
+        padding-top: 41px;
+        top: 5px;
+        left: -36px;
+      }
+
+      .planet-line {
+        bottom: calc(-100% - 60px);
+        right: 11px;
+        height: 225px;
+      }
+    }
+    .planet-6 {
+      .planet-image {
+        width: 343px;
+        top: -155px;
+        left: -128px;
+      }
+      .planet-card {
+        top: 37px;
+        left: -51px;
+      }
+
+      .planet-line {
+        bottom: 182px;
+        right: -15px;
+        height: 172px;
+      }
+    }
+    .planet-7 {
+      .planet-image {
+        width: 341px;
+        top: 81px;
+        left: -125px;
+      }
+      .planet-card {
+        top: 47px;
+        left: -60px;
+      }
+
+      .planet-line {
+        bottom: calc(-100% - 60px);
+        right: 13px;
+        height: 168px;
+      }
+    }
+    .planet-8 {
+      .planet-image {
+        width: 342px;
+        top: -96px;
+        left: -140px;
+      }
+      .planet-card {
+        top: 95px;
+        left: -74px;
+      }
+
+      .planet-line {
+        bottom: 182px;
+        right: 6px;
+        height: 223px;
+      }
+    }
+    .planet-9 {
+      .planet-image {
+        width: 341px;
+        top: 37px;
+        left: -136px;
+      }
+      .planet-card {
+        top: 3px;
+        left: -81px;
+      }
+    }
   }
 
   &-item {
@@ -83,180 +242,144 @@
         z-index: -1;
       }
     }
-
-    &.planet-1 {
-      .planet-image {
-        width: 343px;
-        top: 38px;
-        left: -53px;
-      }
-      .planet-card {
-        top: 0;
-        left: 3px;
-      }
-
-      .planet-line {
-        bottom: calc(-100% - 61px);
-        right: -38px;
-        height: 205px;
-      }
-    }
-    &.planet-2 {
-      .planet-image {
-        width: 346px;
-        top: -154px;
-        left: -77px;
-      }
-      .planet-card {
-        top: 37px;
-        left: -6px;
-      }
-
-      .planet-line {
-        bottom: 183px;
-        right: -77px;
-        height: 161px;
-      }
-    }
-    &.planet-3 {
-      .planet-image {
-        width: 339px;
-        top: 81px;
-        left: -68px;
-      }
-      .planet-card {
-        top: 47px;
-        left: -14px;
-        padding-top: 42px;
-      }
-
-      .planet-line {
-        bottom: calc(-100% - 58px);
-        right: -25px;
-        height: 164px;
-      }
-    }
-    &.planet-4 {
-      .planet-image {
-        width: 346px;
-        top: -98px;
-        left: -91px;
-      }
-      .planet-card {
-        bottom: -43px;
-        left: -32px;
-      }
-
-      .planet-line {
-        bottom: 181px;
-        right: -39px;
-        height: 220px;
-      }
-    }
-    &.planet-5 {
-      .planet-image {
-        width: 339px;
-        top: 36px;
-        left: -93px;
-      }
-      .planet-card {
-        padding-top: 41px;
-        top: 5px;
-        left: -36px;
-      }
-
-      .planet-line {
-        bottom: calc(-100% - 60px);
-        right: 11px;
-        height: 225px;
-      }
-    }
-    &.planet-6 {
-      .planet-image {
-        width: 343px;
-        top: -155px;
-        left: -128px;
-      }
-      .planet-card {
-        top: 37px;
-        left: -51px;
-      }
-
-      .planet-line {
-        bottom: 182px;
-        right: -15px;
-        height: 172px;
-      }
-    }
-    &.planet-7 {
-      .planet-image {
-        width: 341px;
-        top: 81px;
-        left: -125px;
-      }
-      .planet-card {
-        top: 47px;
-        left: -60px;
-      }
-
-      .planet-line {
-        bottom: calc(-100% - 60px);
-        right: 13px;
-        height: 168px;
-      }
-    }
-    &.planet-8 {
-      .planet-image {
-        width: 342px;
-        top: -96px;
-        left: -140px;
-      }
-      .planet-card {
-        top: 95px;
-        left: -74px;
-      }
-
-      .planet-line {
-        bottom: 182px;
-        right: 6px;
-        height: 223px;
-      }
-    }
-    &.planet-9 {
-      .planet-image {
-        width: 341px;
-        top: 37px;
-        left: -136px;
-      }
-      .planet-card {
-        top: 3px;
-        left: -81px;
-      }
-    }
   }
 
   .ship {
+    --start-y: -28px;
+    --start-x: -5px;
+
+    --mid-y: -12px;
+    --mid-x: 24px;
+
+    --end-y: 110px;
+    --end-x: 40px;
+
     position: absolute;
-    top: 64%;
-    left: 24%;
+    bottom: var(--start-y);
+    left: var(--start-x);
     width: 71px;
     height: 71px;
     animation: shipMove 2s linear forwards;
     animation-delay: 1000ms;
+    z-index: 10;
+  }
+
+  &-mobile {
+    display: none;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+
+    @include tabletLg {
+      display: grid;
+    }
+  }
+
+  .roadmap-item-mobile {
+    &.even {
+      .planet-image {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    &.odd {
+      align-items: flex-end;
+      margin-left: unset;
+
+      .planet-image {
+        left: unset;
+        right: -60px;
+      }
+
+      .planet-card {
+        right: 0;
+      }
+    }
+
+    &:last-child {
+      grid-column: 1 / -1;
+      margin-left: unset;
+      align-items: center;
+    }
+
+    .planet-wrapper {
+      max-width: 310px;
+      width: 100%;
+      min-height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .planet-image {
+      width: 343px;
+      top: 120px;
+      z-index: 4;
+    }
+
+    .planet-image {
+      left: -60px;
+    }
+
+    .planet-line {
+      top: 275px;
+      right: unset;
+
+      &-1 {
+        width: 280px;
+        left: 220px;
+      }
+      &-2 {
+        width: 190px;
+        left: 200px;
+      }
+
+      &-3 {
+        width: 193px;
+        top: 279px;
+        right: 165px;
+      }
+      &-4 {
+        width: 170px;
+        top: 279px;
+        right: 181px;
+      }
+      &-5 {
+        width: 212px;
+        top: 277px;
+        left: 229px;
+      }
+      &-6 {
+        width: 173px;
+        top: 277px;
+        left: 229px;
+      }
+      &-7 {
+        width: 354px;
+        top: 277px;
+        right: 0;
+      }
+      &-8 {
+        width: 200px;
+        top: 277px;
+        right: 178px;
+      }
+    }
   }
 }
 
 @keyframes shipMove {
   0% {
-    top: 64%;
-    left: 24%;
+    bottom: var(--start-y);
+    left: var(--start-x);
   }
   50% {
-    top: 62%;
-    left: 26.5%;
+    bottom: var(--mid-y);
+    left: var(--mid-x);
   }
   100% {
-    top: 48%;
-    left: 27%;
+    bottom: var(--end-y);
+    left: var(--end-x);
   }
 }

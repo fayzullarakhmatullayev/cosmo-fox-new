@@ -1,6 +1,8 @@
 .page-mine {
   .container {
-    padding: 0;
+    @include mobile {
+      padding: 0;
+    }
   }
 }
 
