@@ -60,7 +60,6 @@
       .planet-card {
         top: 47px;
         left: -14px;
-        padding-top: 42px;
       }
 
       .planet-line {
@@ -97,7 +96,6 @@
         left: -93px;
       }
       .planet-card {
-        padding-top: 41px;
         top: 5px;
         left: -36px;
       }
@@ -213,6 +211,9 @@
       padding: 27px 10px 24px;
       text-align: center;
       z-index: 5;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
 
       h3 {
         font-size: 24px;
@@ -242,26 +243,6 @@
         z-index: -1;
       }
     }
-  }
-
-  .ship {
-    --start-y: -28px;
-    --start-x: -5px;
-
-    --mid-y: -12px;
-    --mid-x: 24px;
-
-    --end-y: 110px;
-    --end-x: 40px;
-
-    position: absolute;
-    bottom: var(--start-y);
-    left: var(--start-x);
-    width: 71px;
-    height: 71px;
-    animation: shipMove 2s linear forwards;
-    animation-delay: 1000ms;
-    z-index: 10;
   }
 
   &-mobile {
@@ -367,6 +348,42 @@
       }
     }
   }
+
+  .ship {
+    --start-y: -28px;
+    --start-x: -5px;
+
+    --mid-y: -12px;
+    --mid-x: 24px;
+
+    --down-y: -35px;
+    --down-x: 160px;
+
+    --end-y: 96px;
+    --end-x: 40px;
+
+    @include tabletLg {
+      --start-y: 262px;
+      --start-x: 36px;
+
+      --mid-y: 262px;
+      --mid-x: 160px;
+
+      --end-y: -38px;
+      --end-x: 94px;
+
+      animation: shipMoveMobile 4s linear forwards;
+    }
+
+    position: absolute;
+    bottom: var(--start-y);
+    left: var(--start-x);
+    width: 71px;
+    height: 71px;
+    animation: shipMove 2s linear forwards;
+    animation-delay: 1000ms;
+    z-index: 10;
+  }
 }
 
 @keyframes shipMove {
@@ -374,10 +391,31 @@
     bottom: var(--start-y);
     left: var(--start-x);
   }
-  50% {
+  25% {
     bottom: var(--mid-y);
     left: var(--mid-x);
   }
+
+  100% {
+    bottom: var(--end-y);
+    left: var(--end-x);
+  }
+}
+
+@keyframes shipMoveMobile {
+  0% {
+    bottom: var(--start-y);
+    left: var(--start-x);
+  }
+  35% {
+    bottom: var(--mid-y);
+    left: var(--mid-x);
+  }
+  75% {
+    bottom: var(--down-y);
+    left: var(--down-x);
+  }
+
   100% {
     bottom: var(--end-y);
     left: var(--end-x);
