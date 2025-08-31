@@ -26,11 +26,28 @@
     }
 
     video {
+      background: transparent !important;
+      background-color: transparent !important;
+
+      border: none;
+      outline: none;
+
       width: 100%;
       position: absolute;
       top: 0;
       left: -64px;
       display: block;
+
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+
+      &::-webkit-media-controls {
+        display: none !important;
+      }
+
+      &::-webkit-media-controls-panel {
+        display: none !important;
+      }
 
       @include tabletLg {
         left: 50%;
