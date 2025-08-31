@@ -3,9 +3,9 @@
     <div class="home__wrapper">
       <div class="home__video">
         <template v-if="mounted">
-          <img v-if="isIOS()" src="/images/title-fallback.png" alt="Video fallback" />
-          <video v-else autoplay loop muted playsinline preload="auto" src="/videos/title.mp4">
-            <source src="/videos/title.mp4" type="video/mp4" />
+          <video autoplay loop muted playsinline preload="auto" src="/videos/title.mp4">
+            <img v-if="isIOS()" src="/images/title-fallback.png" alt="Video fallback" />
+            <source v-else src="/videos/title.mp4" type="video/mp4" />
           </video>
         </template>
       </div>
