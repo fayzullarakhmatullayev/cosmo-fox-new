@@ -2,10 +2,12 @@
   <section class="home">
     <div class="home__wrapper">
       <div class="home__video">
-        <img v-if="isIOS()" src="/images/title-fallback.png" alt="Video fallback" />
-        <video v-else autoplay loop muted playsinline preload="auto" src="/videos/title.mp4">
-          <source src="/videos/title.mp4" type="video/mp4" />
-        </video>
+        <template v-if="mounted">
+          <img v-if="isIOS()" src="/images/title-fallback.png" alt="Video fallback" />
+          <video v-else autoplay loop muted playsinline preload="auto" src="/videos/title.mp4">
+            <source src="/videos/title.mp4" type="video/mp4" />
+          </video>
+        </template>
       </div>
       <div class="home__content">
         <h1 class="home__title">{{ t("home.title") }}</h1>
@@ -22,7 +24,7 @@
 const { t } = useI18n();
 
 const lists = reactive(["home.list1", "home.list2", "home.list3"]);
-
+const mounted = ref(false);
 useHead({
   title: t("nav.home"),
   meta: [{ name: "description", content: "Main page" }]
@@ -32,4 +34,8 @@ definePageMeta({ page: "home" });
 function isIOS() {
   return /iPad|iPhone|iPod/.test(navigator.userAgent);
 }
+
+onMounted(() => {
+  mounted.value = true;
+});
 </script>
