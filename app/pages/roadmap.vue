@@ -47,7 +47,7 @@
             <p>{{ item.text }}</p>
 
             <nuxt-img
-              src="/images/roadmap/roadmap-slot.png"
+              src="/images/roadmap/roadmap-slot-mobile.png"
               alt="line"
               quality="80"
               format="webp"

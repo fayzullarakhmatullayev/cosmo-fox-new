@@ -1,8 +1,16 @@
 .roadmap {
   padding: 36px 0 80px;
 
+  @include tabletSm {
+    padding: 19px 0 40px;
+  }
+
   .title {
     margin-bottom: 27px;
+
+    @include tabletSm {
+      margin-bottom: 23px;
+    }
   }
 
   &-wrapper {
@@ -215,12 +223,23 @@
       flex-direction: column;
       justify-content: center;
 
+      @include tabletSm {
+        width: 129px;
+        height: 78px;
+        padding: 15px 5px;
+      }
+
       h3 {
         font-size: 24px;
         line-height: 1.1;
         margin-bottom: 15px;
         color: white;
         font-weight: 400;
+
+        @include tabletSm {
+          font-size: 14px;
+          margin-bottom: 9px;
+        }
       }
 
       p {
@@ -232,6 +251,10 @@
         color: white;
         white-space: pre-line;
         text-transform: uppercase;
+
+        @include tabletSm {
+          font-size: 10px;
+        }
       }
 
       .roadmap-slot {
@@ -255,6 +278,11 @@
     @include tabletLg {
       display: grid;
     }
+
+    @include tabletSm {
+      max-width: 390px;
+      width: 100%;
+    }
   }
 
   .roadmap-item-mobile {
@@ -271,6 +299,9 @@
       .planet-image {
         left: unset;
         right: -60px;
+        @include tabletSm {
+          right: -35px;
+        }
       }
 
       .planet-card {
@@ -284,19 +315,53 @@
       align-items: center;
     }
 
+    @include tabletSm {
+      &.planet-1 {
+        margin-left: 10px;
+      }
+      &.planet-2 {
+        margin-left: -5px;
+      }
+      &.planet-4 {
+        margin-right: 25px;
+      }
+      &.planet-5 {
+        margin-left: 25px;
+      }
+      &.planet-5 {
+        margin-right: 25px;
+      }
+      &.planet-8 {
+        margin-right: 25px;
+      }
+      &.planet-9 {
+        margin-right: -46px;
+      }
+    }
+
     .planet-wrapper {
       max-width: 310px;
       width: 100%;
       min-height: 300px;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
+
+      @include tabletSm {
+        max-width: 138px;
+        min-height: 150px;
+      }
     }
 
     .planet-image {
       width: 343px;
-      top: 120px;
+      top: 40px;
       z-index: 4;
+
+      @include tabletSm {
+        width: 187px;
+        top: 20px;
+      }
     }
 
     .planet-image {
@@ -304,47 +369,83 @@
     }
 
     .planet-line {
-      top: 275px;
+      top: 200px;
       right: unset;
+
+      @include tabletSm {
+        top: 98px;
+      }
 
       &-1 {
         width: 280px;
         left: 220px;
+
+        @include tabletSm {
+          width: 98px;
+          left: 118px;
+        }
       }
       &-2 {
         width: 190px;
         left: 200px;
+
+        @include tabletSm {
+          width: 94px;
+          left: 109px;
+        }
       }
 
       &-3 {
         width: 193px;
-        top: 279px;
         right: 165px;
+
+        @include tabletSm {
+          width: 97px;
+          right: 100px;
+        }
       }
       &-4 {
         width: 170px;
-        top: 279px;
         right: 181px;
+
+        @include tabletSm {
+          width: 94px;
+          right: 100px;
+        }
       }
       &-5 {
         width: 212px;
-        top: 277px;
         left: 229px;
+        @include tabletSm {
+          width: 94px;
+          left: 109px;
+        }
       }
       &-6 {
         width: 173px;
-        top: 277px;
         left: 229px;
+        @include tabletSm {
+          width: 89px;
+          left: 109px;
+        }
       }
       &-7 {
         width: 354px;
-        top: 277px;
         right: 0;
+
+        @include tabletSm {
+          width: 179px;
+          right: 18px;
+        }
       }
       &-8 {
         width: 200px;
-        top: 277px;
         right: 178px;
+
+        @include tabletSm {
+          width: 94px;
+          right: 100px;
+        }
       }
     }
   }
@@ -362,6 +463,15 @@
     --end-y: 96px;
     --end-x: 40px;
 
+    position: absolute;
+    bottom: var(--start-y);
+    left: var(--start-x);
+    width: 71px;
+    height: 71px;
+    animation: shipMove 2s linear forwards;
+    animation-delay: 1000ms;
+    z-index: 10;
+
     @include tabletLg {
       --start-y: 262px;
       --start-x: 36px;
@@ -375,14 +485,22 @@
       animation: shipMoveMobile 4s linear forwards;
     }
 
-    position: absolute;
-    bottom: var(--start-y);
-    left: var(--start-x);
-    width: 71px;
-    height: 71px;
-    animation: shipMove 2s linear forwards;
-    animation-delay: 1000ms;
-    z-index: 10;
+    @include tabletSm {
+      width: 35px;
+      height: 35px;
+
+      --start-y: 132px;
+      --start-x: 0px;
+
+      --mid-y: 132px;
+      --mid-x: 76px;
+
+      --down-y: -15px;
+      --down-x: 76px;
+
+      --end-y: -15px;
+      --end-x: 40px;
+    }
   }
 }
 
