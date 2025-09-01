@@ -1,9 +1,9 @@
 <template>
   <div class="mobile__menu">
     <nav class="mobile__menu--links">
-      <nuxt-link-locale v-for="nav in navs" :key="nav.to" active-class="active" :to="nav.to" @click="handleLinkClick">
+      <a v-for="nav in navs" :key="nav.to" active-class="active" :href="nav.to" @click="handleLinkClick">
         {{ t(nav.label) }}
-      </nuxt-link-locale>
+      </a>
       <a href="#">{{ t("nav.white-paper") }}</a>
       <a href="#">{{ t("nav.blog") }}</a>
     </nav>

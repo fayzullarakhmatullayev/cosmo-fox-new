@@ -1,5 +1,5 @@
 <template>
-  <section class="mine">
+  <section id="mine" class="mine">
     <h2 class="title">{{ t("nav.mine") }}!</h2>
 
     <div class="mine__wrapper">
@@ -58,11 +58,4 @@ const mines = reactive([
     top: 68
   }
 ]);
-
-useHead({
-  title: t("nav.mine"),
-  meta: [{ name: "description", content: "Mine page" }]
-});
-
-definePageMeta({ page: "mine" });
 </script>

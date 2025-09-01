@@ -1,15 +1,11 @@
-.page-mine {
-  .container {
-    @include mobile {
-      padding: 0;
-    }
-  }
-}
-
 .mine {
-  padding: 36px 0 56px;
+  padding: 36px 0 156px;
   .title {
     margin-bottom: 40px;
+  }
+
+  @include mobile {
+    padding-bottom: 30px;
   }
 
   &__wrapper {
@@ -154,6 +150,12 @@
       flex-direction: column;
       gap: 20px;
 
+      @include mobile {
+        max-width: 295px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
       li {
         font-family: var(--font-overpass);
         font-size: 20px;
@@ -169,15 +171,16 @@
     }
 
     &--2 {
-      &.on-bottom {
-        margin-left: 25px;
-        margin-top: 66px;
+      &.on-bottom .mine__card--picture {
+        margin-top: 64px;
       }
     }
   }
 
   &__swiper {
     display: none;
+    max-width: 800px;
+    margin: 0 auto;
     @media (max-width: 1320px) {
       display: block;
     }

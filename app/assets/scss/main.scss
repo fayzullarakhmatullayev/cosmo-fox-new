@@ -13,6 +13,10 @@
   --font-overpass: "Overpass Mono", monospace;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-furore);
   background: #010a24;

@@ -4,15 +4,15 @@
       <div class="header__wrapper">
         <div class="header__nav">
           <!-- Logo -->
-          <nuxt-link-locale class="header__nav--logo" to="/" @click="handleLinkClick">
+          <a href="/" class="header__nav--logo" to="/">
             <nuxt-img src="/images/logo.png" alt="logo" format="webp" quality="80" />
-          </nuxt-link-locale>
+          </a>
 
           <!-- Nav items -->
           <nav class="header__nav--links">
-            <nuxt-link-locale v-for="nav in navs" :key="nav.to" active-class="active" :to="nav.to">
+            <a v-for="nav in navs" :key="nav.to" active-class="active" :href="nav.to">
               {{ t(nav.label) }}
-            </nuxt-link-locale>
+            </a>
             <a href="#">{{ t("nav.white-paper") }}</a>
             <a href="#">{{ t("nav.blog") }}</a>
           </nav>
@@ -59,35 +59,26 @@ const isLocaleVisible = ref(false);
 const isMenuVisible = ref(false);
 
 const navs = reactive([
-  { to: "/about", label: "nav.about" },
-  { to: "/mine", label: "nav.mine" },
-  { to: "/token", label: "nav.token" },
-  { to: "/roadmap", label: "nav.roadmap" },
-  { to: "/partners", label: "nav.partners" }
+  { to: "#about", label: "nav.about" },
+  { to: "#mine", label: "nav.mine" },
+  { to: "#token", label: "nav.token" },
+  { to: "#roadmap", label: "nav.roadmap" },
+  { to: "#partners", label: "nav.partners" }
 ]);
 
 const handleLocaleChange = (code: "en" | "ru") => {
   setLocale(code);
   isLocaleVisible.value = false;
-};
-
-const handleLinkClick = () => {
-  setTimeout(() => {
-    isMenuVisible.value = false;
-    document.body.style.overflow = "unset";
-    document.body.style.overflowX = "hidden";
-  }, 100);
+  document.body.style.overflow = "auto";
 };
 
 const handleBurgerClick = () => {
   isMenuVisible.value = !isMenuVisible.value;
-
   if (isMenuVisible.value) {
-    window.scrollTo(0, 0);
     document.body.style.overflow = "hidden";
+    window.scrollTo(0, 0);
   } else {
-    document.body.style.overflow = "unset";
-    document.body.style.overflowX = "hidden";
+    document.body.style.overflow = "auto";
   }
 };
 </script>

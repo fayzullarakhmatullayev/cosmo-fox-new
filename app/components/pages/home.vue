@@ -25,11 +25,6 @@ const { t } = useI18n();
 
 const lists = reactive(["home.list1", "home.list2", "home.list3"]);
 const mounted = ref(false);
-useHead({
-  title: t("nav.home"),
-  meta: [{ name: "description", content: "Main page" }]
-});
-definePageMeta({ page: "home" });
 
 function isIOS() {
   return /iPad|iPhone|iPod/.test(navigator.userAgent);

@@ -1,5 +1,5 @@
 .roadmap {
-  padding: 36px 0 80px;
+  padding: 36px 0 180px;
   overflow-x: hidden;
 
   @include tabletSm {
@@ -485,9 +485,12 @@
     left: var(--start-x);
     width: 71px;
     height: 71px;
-    animation: shipMove 2s linear forwards;
     animation-delay: 1000ms;
     z-index: 10;
+
+    &.ship-animated {
+      animation: shipMove 2s linear forwards;
+    }
 
     @include tabletLg {
       --start-y: 262px;
@@ -499,7 +502,9 @@
       --end-y: -38px;
       --end-x: 94px;
 
-      animation: shipMoveMobile 4s linear forwards;
+      &.ship-animated {
+        animation: shipMoveMobile 4s linear forwards;
+      }
     }
 
     @include tabletSm {

@@ -1,5 +1,5 @@
 <template>
-  <section class="partners">
+  <section id="partners" class="partners">
     <div class="title">{{ $t("parthers_title") }}</div>
 
     <div class="partners__wrapper">
@@ -44,8 +44,6 @@
 </template>
 
 <script lang="ts" setup>
-const { t } = useI18n();
-
 const partners = computed(() => [
   { image: "/images/partners/partner-1.png", height: 47 },
   { image: "/images/partners/partner-2.png", height: 43 },
@@ -59,11 +57,4 @@ const socials = reactive([
   { icon: "discord", name: "discord", width: 48, link: "#" },
   { icon: "twitter", name: "x.com", width: 35, link: "#" }
 ]);
-
-useHead({
-  title: t("nav.partners"),
-  meta: [{ name: "description", content: "Partners page" }]
-});
-
-definePageMeta({ page: "partners" });
 </script>

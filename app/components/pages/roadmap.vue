@@ -1,5 +1,5 @@
 <template>
-  <section class="roadmap">
+  <section id="roadmap" ref="roadmapRef" class="roadmap">
     <div class="title">{{ t("roadmap.title") }}</div>
     <div class="roadmap-wrapper">
       <div
@@ -27,7 +27,7 @@
           <div v-if="item.line" class="planet-line">
             <nuxt-img :src="item.line" quality="80" format="webp" />
 
-            <div v-if="i === 1" class="ship">
+            <div v-if="i === 1" ref="shipRef" class="ship" :class="{ 'ship-animated': isShipVisible }">
               <nuxt-img src="/images/roadmap/ship.png" alt="ship" quality="80" format="webp" />
             </div>
           </div>
@@ -61,7 +61,7 @@
           <div v-if="item.line" :class="['planet-line', `planet-line-${i + 1}`]">
             <nuxt-img :src="item.mobileLine" quality="80" format="webp" />
 
-            <div v-if="i === 1" class="ship">
+            <div v-if="i === 1" ref="shipMobileRef" class="ship" :class="{ 'ship-animated': isShipVisible }">
               <nuxt-img src="/images/roadmap/ship.png" alt="ship" quality="80" format="webp" />
             </div>
           </div>
@@ -73,6 +73,10 @@
 
 <script lang="ts" setup>
 const { t } = useI18n();
+const shipRef = ref<HTMLElement | null>(null);
+const shipMobileRef = ref<HTMLElement | null>(null);
+const roadmapRef = ref<HTMLElement | null>(null);
+const isShipVisible = ref(false);
 
 const roadmap = computed(() => [
   {
@@ -157,10 +161,30 @@ function isPairEven(num: number): boolean {
   return Math.floor(num / 2) % 2 === 0;
 }
 
-useHead({
-  title: t("nav.roadmap"),
-  meta: [{ name: "description", content: "Roadmap page" }]
-});
+onMounted(() => {
+  if (roadmapRef.value) {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            isShipVisible.value = true;
+            // Optional: disconnect observer after first trigger
+            // observer.disconnect();
+          }
+        });
+      },
+      {
+        threshold: 0.3, // Trigger when 30% of the element is visible
+        rootMargin: "0px 0px -100px 0px" // Trigger 100px before the element enters viewport
+      }
+    );
 
-definePageMeta({ page: "roadmap" });
+    observer.observe(roadmapRef.value);
+
+    // Cleanup observer on component unmount
+    onUnmounted(() => {
+      observer.disconnect();
+    });
+  }
+});
 </script>
