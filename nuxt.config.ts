@@ -12,6 +12,23 @@ export default defineNuxtConfig({
     "swiper/css/navigation"
   ],
 
+  postcss: {
+    plugins: {
+      autoprefixer: {
+        overrideBrowserslist: [
+          "> 0.5%",
+          "last 2 versions",
+          "not dead",
+          "Safari >= 9",
+          "iOS >= 9",
+          "Chrome >= 58",
+          "Firefox >= 54",
+          "Edge >= 16"
+        ]
+      }
+    }
+  },
+
   app: {
     head: {
       title: "Cosmo Fox",
@@ -55,13 +72,6 @@ export default defineNuxtConfig({
       useCookie: true,
       cookieKey: "locale",
       alwaysRedirect: true
-    }
-  },
-  postcss: {
-    plugins: {
-      autoprefixer: {
-        overrideBrowserslist: ["> 1%", "last 2 versions", "not dead", "Safari >= 10", "iOS >= 10"]
-      }
     }
   }
 });
