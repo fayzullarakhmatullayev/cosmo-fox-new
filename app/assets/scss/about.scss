@@ -4,6 +4,10 @@
 
   @include laptop {
     padding: 110px 30px 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   @include laptopH {
