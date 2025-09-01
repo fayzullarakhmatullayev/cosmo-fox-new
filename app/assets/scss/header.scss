@@ -78,10 +78,6 @@
         white-space: nowrap;
 
         @include laptop {
-          padding: 0 20px;
-        }
-
-        @include laptopSm {
           padding: 0 12px;
           font-size: 16px;
         }
@@ -122,12 +118,8 @@
           transition: opacity 0.3s ease;
           opacity: 0;
 
-          @include laptopH {
-            bottom: -34px;
-          }
-
           @include laptop {
-            bottom: -31px;
+            bottom: -33px;
           }
 
           @include laptopSm {

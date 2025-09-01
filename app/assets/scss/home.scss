@@ -20,8 +20,8 @@
     height: calc(100dvh - 105px);
   }
 
-  @include laptopH {
-    padding: 220px 0 160px;
+  @include laptop {
+    padding: 130px 0;
   }
 
   &__wrapper {
@@ -38,7 +38,9 @@
     width: 100%;
     height: 140px;
     overflow: hidden;
-
+    @include laptop {
+      height: 120px;
+    }
     video {
       background: transparent !important;
       background-color: transparent !important;
@@ -66,6 +68,10 @@
         transform: translate(-50%, -50%) scale(2.6);
       }
 
+      @include laptop {
+        transform: translate(-50%, -50%) scale(2.6);
+      }
+
       @include mobile {
         top: 71%;
         left: 50%;
@@ -83,9 +89,6 @@
     width: 100%;
     text-align: center;
     margin: 0 auto;
-
-    @include tabletLg {
-    }
   }
 
   &__title {
@@ -94,6 +97,10 @@
     line-height: 1.1;
     margin-bottom: 35px;
     white-space: pre-line;
+    @include laptop {
+      font-size: 25px;
+      margin-bottom: 20px;
+    }
 
     @include mobile {
       font-size: 18px;

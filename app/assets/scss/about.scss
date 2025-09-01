@@ -3,11 +3,11 @@
   min-height: 100dvh;
 
   @include laptop {
-    padding: 200px 30px 40px;
+    padding: 110px 30px 40px;
   }
 
   @include laptopH {
-    padding: 200px 30px 40px;
+    padding: 110px 30px 40px;
   }
 
   @include tabletLg {
