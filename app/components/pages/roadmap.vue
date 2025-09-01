@@ -1,68 +1,70 @@
 <template>
   <section id="roadmap" ref="roadmapRef" class="roadmap">
-    <div class="title">{{ t("roadmap.title") }}</div>
-    <div class="roadmap-wrapper">
-      <div
-        v-for="(item, i) in roadmap"
-        :key="i"
-        :class="['roadmap-item', i % 2 === 0 ? 'top' : 'bottom', `planet-${i + 1}`]"
-      >
-        <div class="planet-wrapper">
-          <div class="planet-card">
-            <h3>{{ item.date }}</h3>
-            <p>{{ item.text }}</p>
+    <div class="container">
+      <div class="title">{{ t("roadmap.title") }}</div>
+      <div class="roadmap-wrapper">
+        <div
+          v-for="(item, i) in roadmap"
+          :key="i"
+          :class="['roadmap-item', i % 2 === 0 ? 'top' : 'bottom', `planet-${i + 1}`]"
+        >
+          <div class="planet-wrapper">
+            <div class="planet-card">
+              <h3>{{ item.date }}</h3>
+              <p>{{ item.text }}</p>
 
-            <nuxt-img
-              src="/images/roadmap/roadmap-slot.png"
-              alt="line"
-              quality="80"
-              format="webp"
-              class="roadmap-slot"
-            />
-          </div>
-          <div class="planet-image">
-            <nuxt-img :src="item.planet" alt="planet" quality="80" format="webp" class="planet"></nuxt-img>
-          </div>
+              <nuxt-img
+                src="/images/roadmap/roadmap-slot.png"
+                alt="line"
+                quality="80"
+                format="webp"
+                class="roadmap-slot"
+              />
+            </div>
+            <div class="planet-image">
+              <nuxt-img :src="item.planet" alt="planet" quality="80" format="webp" class="planet"></nuxt-img>
+            </div>
 
-          <div v-if="item.line" class="planet-line">
-            <nuxt-img :src="item.line" quality="80" format="webp" />
+            <div v-if="item.line" class="planet-line">
+              <nuxt-img :src="item.line" quality="80" format="webp" />
 
-            <div v-if="i === 1" ref="shipRef" class="ship" :class="{ 'ship-animated': isShipVisible }">
-              <nuxt-img src="/images/roadmap/ship.png" alt="ship" quality="80" format="webp" />
+              <div v-if="i === 1" ref="shipRef" class="ship" :class="{ 'ship-animated': isShipVisible }">
+                <nuxt-img src="/images/roadmap/ship.png" alt="ship" quality="80" format="webp" />
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="roadmap-mobile">
-      <div
-        v-for="(item, i) in processedRoadmap"
-        :key="i"
-        :class="['roadmap-item-mobile', 'roadmap-item', `planet-${i + 1}`, `${isPairEven(i) ? 'even' : 'odd'}`]"
-      >
-        <div class="planet-wrapper">
-          <div class="planet-card">
-            <h3>{{ item.date }}</h3>
-            <p>{{ item.text }}</p>
+      <div class="roadmap-mobile">
+        <div
+          v-for="(item, i) in processedRoadmap"
+          :key="i"
+          :class="['roadmap-item-mobile', 'roadmap-item', `planet-${i + 1}`, `${isPairEven(i) ? 'even' : 'odd'}`]"
+        >
+          <div class="planet-wrapper">
+            <div class="planet-card">
+              <h3>{{ item.date }}</h3>
+              <p>{{ item.text }}</p>
 
-            <nuxt-img
-              src="/images/roadmap/roadmap-slot-mobile.png"
-              alt="line"
-              quality="80"
-              format="webp"
-              class="roadmap-slot"
-            />
-          </div>
-          <div class="planet-image">
-            <nuxt-img :src="item.planet" alt="planet" quality="80" format="webp" class="planet"></nuxt-img>
-          </div>
+              <nuxt-img
+                src="/images/roadmap/roadmap-slot-mobile.png"
+                alt="line"
+                quality="80"
+                format="webp"
+                class="roadmap-slot"
+              />
+            </div>
+            <div class="planet-image">
+              <nuxt-img :src="item.planet" alt="planet" quality="80" format="webp" class="planet"></nuxt-img>
+            </div>
 
-          <div v-if="item.line" :class="['planet-line', `planet-line-${i + 1}`]">
-            <nuxt-img :src="item.mobileLine" quality="80" format="webp" />
+            <div v-if="item.line" :class="['planet-line', `planet-line-${i + 1}`]">
+              <nuxt-img :src="item.mobileLine" quality="80" format="webp" />
 
-            <div v-if="i === 1" ref="shipMobileRef" class="ship" :class="{ 'ship-animated': isShipVisible }">
-              <nuxt-img src="/images/roadmap/ship.png" alt="ship" quality="80" format="webp" />
+              <div v-if="i === 1" ref="shipMobileRef" class="ship" :class="{ 'ship-animated': isShipVisible }">
+                <nuxt-img src="/images/roadmap/ship.png" alt="ship" quality="80" format="webp" />
+              </div>
             </div>
           </div>
         </div>

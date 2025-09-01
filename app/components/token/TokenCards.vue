@@ -21,16 +21,10 @@
 </template>
 
 <script lang="ts" setup>
-const { t } = useI18n();
-
 const cards = computed(() => [
   { image: "/images/token/token-1.png", text: "token.text1" },
   { image: "/images/token/token-2.png", text: "token.text2" },
   { image: "/images/token/token-3.png", text: "token.text3" },
   { image: "/images/token/token-4.png", text: "token.text4" }
 ]);
-useHead({
-  title: t("nav.token"),
-  meta: [{ name: "description", content: "Token page" }]
-});
 </script>
