@@ -30,44 +30,23 @@
       src="/videos/fox_pilot.mp4"
       class="bg-img"
     ></video>
-    <nuxt-img v-if="isSlowConnection" src="/images/home-bg.jpg" alt="bg" format="webp" quality="80" class="bg-img" />
+    <nuxt-img v-else src="/images/home-bg.jpg" alt="bg" format="webp" quality="80" class="bg-img" />
   </section>
 </template>
 
 <script lang="ts" setup>
 const { t } = useI18n();
 
+const { isSlowConnection } = useConnectionSpeed();
+
 const lists = reactive(["home.list1", "home.list2", "home.list3"]);
-const isSlowConnection = ref(false);
 const mounted = ref(false);
 
 function isIOS() {
   return /iPad|iPhone|iPod|Safari|AppleWebKit/.test(navigator.userAgent);
 }
 
-const testSpeed = async () => {
-  try {
-    const startTime = performance.now();
-
-    const response = await fetch("https://fakestoreapi.com/products", {
-      cache: "no-cache"
-    });
-    await response.json();
-
-    const endTime = performance.now();
-
-    const duration = endTime - startTime;
-    const fileSizeKB = 10;
-    const speedKbps = (fileSizeKB * 8) / (duration / 1000);
-    console.log(speedKbps);
-    return speedKbps < 300;
-  } catch {
-    return true;
-  }
-};
-
 onMounted(async () => {
   mounted.value = true;
-  isSlowConnection.value = await testSpeed();
 });
 </script>
