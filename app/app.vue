@@ -28,6 +28,8 @@ onMounted(() => {
     app.width = window.innerWidth;
     app.height = window.innerHeight;
   });
+
+  console.log(app);
 });
 </script>
 
