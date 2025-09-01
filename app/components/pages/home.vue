@@ -29,7 +29,7 @@ const lists = reactive(["home.list1", "home.list2", "home.list3"]);
 const mounted = ref(false);
 
 function isIOS() {
-  return /iPad|iPhone|iPod/.test(navigator.userAgent);
+  return /iPad|iPhone|iPod|Safari/.test(navigator.userAgent);
 }
 
 onMounted(() => {
