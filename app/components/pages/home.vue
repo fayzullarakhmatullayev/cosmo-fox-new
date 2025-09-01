@@ -48,8 +48,8 @@ const testSpeed = async () => {
     const duration = endTime - startTime;
     const fileSizeKB = 10;
     const speedKbps = (fileSizeKB * 8) / (duration / 1000);
-
-    return speedKbps < 1500;
+    console.log(speedKbps);
+    return speedKbps < 500;
   } catch {
     return true;
   }
