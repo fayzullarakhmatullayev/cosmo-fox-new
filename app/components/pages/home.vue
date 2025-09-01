@@ -1,5 +1,5 @@
 <template>
-  <section class="home hero">
+  <section class="home hero" :class="{ fast: !isSlowConnection }">
     <div class="container">
       <div class="home__wrapper">
         <div class="home__video">
@@ -19,6 +19,8 @@
         </div>
       </div>
     </div>
+    <nuxt-img v-if="isSlowConnection" src="/images/home-bg.jpg" alt="bg" format="webp" quality="80" class="bg-img" />
+    <video v-else autoplay loop muted playsinline preload="auto" src="/videos/fox_pilot.mp4" class="bg-img"></video>
   </section>
 </template>
 
@@ -26,13 +28,35 @@
 const { t } = useI18n();
 
 const lists = reactive(["home.list1", "home.list2", "home.list3"]);
+const isSlowConnection = ref(false);
 const mounted = ref(false);
 
 function isIOS() {
   return /iPad|iPhone|iPod|Safari|AppleWebKit/.test(navigator.userAgent);
 }
 
-onMounted(() => {
+const testSpeed = async () => {
+  try {
+    const startTime = performance.now();
+
+    const response = await fetch("/images/all-bg.jpg?" + Math.random(), {
+      cache: "no-cache"
+    });
+    await response.blob();
+    const endTime = performance.now();
+
+    const duration = endTime - startTime;
+    const fileSizeKB = 10;
+    const speedKbps = (fileSizeKB * 8) / (duration / 1000);
+
+    return speedKbps < 500;
+  } catch {
+    return true;
+  }
+};
+
+onMounted(async () => {
   mounted.value = true;
+  isSlowConnection.value = await testSpeed();
 });
 </script>

@@ -15,23 +15,7 @@
   </div>
 </template>
 
-<script lang="ts" setup>
-const app = reactive({
-  width: 0,
-  height: 0
-});
-
-onMounted(() => {
-  app.width = window.innerWidth;
-  app.height = window.innerHeight;
-  window.addEventListener("resize", () => {
-    app.width = window.innerWidth;
-    app.height = window.innerHeight;
-  });
-
-  console.log(app);
-});
-</script>
+<script lang="ts" setup></script>
 
 <style lang="scss">
 .layout {
