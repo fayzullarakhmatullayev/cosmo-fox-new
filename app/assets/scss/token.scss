@@ -1,8 +1,13 @@
 .token {
-  padding: 36px 0 100px;
+  padding: 166px 0 100px;
+  min-height: 100dvh;
+
+  @include laptopH {
+    padding: 120px 0;
+  }
 
   @include mobile {
-    padding-top: 22px;
+    padding-top: 100px;
     padding-bottom: 60px;
   }
 
@@ -26,12 +31,21 @@
       gap: 30px;
     }
 
+    @include laptopH {
+      grid-template-columns: repeat(4, 240px);
+      gap: 30px;
+    }
+
     @include tabletLg {
       display: none;
     }
 
     .token__card {
       @include laptop {
+        min-height: 320px;
+      }
+
+      @include laptopH {
         min-height: 320px;
       }
     }
@@ -41,16 +55,29 @@
         max-height: 100px;
         min-height: 100px;
       }
+
+      @include laptopH {
+        max-height: 100px;
+        min-height: 100px;
+      }
     }
 
     .token__card--text {
       @include laptop {
         font-size: 18px;
       }
+
+      @include laptopH {
+        font-size: 18px;
+      }
     }
 
     .token__card--content {
       @include laptop {
+        gap: 25px;
+      }
+
+      @include laptopH {
         gap: 25px;
       }
     }
@@ -179,6 +206,10 @@
     gap: 95px;
 
     @include laptop {
+      gap: 30px;
+    }
+
+    @include laptopH {
       gap: 30px;
     }
 
@@ -318,6 +349,8 @@
             &:nth-child(2) {
               padding-left: 24px;
               padding-top: 24px;
+              padding-top: 14px !important;
+              white-space: nowrap;
             }
           }
 
@@ -326,7 +359,6 @@
 
             &:nth-child(2) {
               padding: 11px 0 16px;
-              white-space: nowrap;
             }
           }
         }

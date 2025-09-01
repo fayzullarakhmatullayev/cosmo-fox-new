@@ -1,12 +1,21 @@
 .about {
-  padding: 100px 65px 184px;
+  padding: 230px 65px 184px;
+  min-height: 100dvh;
 
   @include laptop {
-    padding: 50px 30px 40px;
+    padding: 200px 30px 40px;
+  }
+
+  @include laptopH {
+    padding: 200px 30px 40px;
+  }
+
+  @include tabletLg {
+    padding-top: 150px;
   }
 
   @include mobile {
-    padding: 46px 16px;
+    padding: 125px 16px;
   }
 
   &__wrapper {
@@ -14,6 +23,12 @@
     display: flex;
     align-items: flex-start;
     gap: 168px;
+
+    @include laptopH {
+      align-items: center;
+      justify-content: center;
+      gap: 60px;
+    }
 
     @include laptop {
       align-items: center;
@@ -48,6 +63,13 @@
 
     @include tabletLg {
       max-width: 100%;
+    }
+    @include laptop {
+      max-width: 600px;
+    }
+
+    @include laptopH {
+      max-width: 600px;
     }
   }
   &__right {

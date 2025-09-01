@@ -4,7 +4,7 @@
       <div class="header__wrapper">
         <div class="header__nav">
           <!-- Logo -->
-          <a href="/" class="header__nav--logo" to="/">
+          <a href="#" class="header__nav--logo" @click="goTop">
             <nuxt-img src="/images/logo.png" alt="logo" format="webp" quality="80" />
           </a>
 
@@ -76,9 +76,12 @@ const handleBurgerClick = () => {
   isMenuVisible.value = !isMenuVisible.value;
   if (isMenuVisible.value) {
     document.body.style.overflow = "hidden";
-    window.scrollTo(0, 0);
   } else {
     document.body.style.overflow = "auto";
   }
+};
+
+const goTop = () => {
+  window.scrollTo(0, 0);
 };
 </script>

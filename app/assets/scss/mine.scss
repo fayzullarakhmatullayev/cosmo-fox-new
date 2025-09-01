@@ -1,11 +1,23 @@
 .mine {
-  padding: 36px 0 156px;
+  padding: 166px 0 156px;
+  min-height: 100dvh;
+
   .title {
     margin-bottom: 40px;
   }
 
+  @include laptopH {
+    padding-top: 120px;
+  }
+
+  @include laptop {
+    padding-top: 120px;
+  }
+
   @include mobile {
+    min-height: 100dvh;
     padding-bottom: 30px;
+    padding-top: 100px;
   }
 
   &__wrapper {
@@ -13,6 +25,11 @@
     grid-template-columns: repeat(4, 360px);
     justify-content: center;
     gap: 70px;
+
+    @include laptopH {
+      grid-template-columns: repeat(4, 300px);
+      gap: 30px;
+    }
 
     @include laptop {
       grid-template-columns: repeat(4, 300px);
@@ -27,14 +44,25 @@
       @include laptop {
         font-size: 20px;
       }
+
+      @include laptopH {
+        font-size: 20px;
+      }
     }
 
     .mine__card--list {
       @include laptop {
         gap: 16px;
       }
+      @include laptopH {
+        gap: 16px;
+      }
       li {
         @include laptop {
+          font-size: 18px;
+        }
+
+        @include laptopH {
           font-size: 18px;
         }
       }
@@ -45,10 +73,20 @@
         width: 240px;
         height: 280px;
       }
+
+      @include laptopH {
+        width: 240px;
+        height: 280px;
+      }
     }
 
     .mine__card--image {
       @include laptop {
+        transform: translate(-50%, -25%) scale(1);
+        top: 25% !important;
+      }
+
+      @include laptopH {
         transform: translate(-50%, -25%) scale(1);
         top: 25% !important;
       }
@@ -65,7 +103,7 @@
     }
 
     @include mobile {
-      min-height: 670px;
+      min-height: 682px;
     }
 
     &.on-top {
@@ -79,7 +117,7 @@
         margin-right: 20px;
 
         @media (max-width: 1320px) {
-          margin: 0 auto 44px;
+          margin: 0 auto 54px;
         }
       }
 

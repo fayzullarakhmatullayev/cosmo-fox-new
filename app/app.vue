@@ -1,10 +1,9 @@
 <template>
   <div class="layout">
-    <div class="hero">
-      <app-header />
-      <pages-home />
-    </div>
+    <app-header />
+
     <main>
+      <pages-home />
       <pages-about />
       <pages-mine />
       <pages-token />
@@ -16,7 +15,21 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const app = reactive({
+  width: 0,
+  height: 0
+});
+
+onMounted(() => {
+  app.width = window.innerWidth;
+  app.height = window.innerHeight;
+  window.addEventListener("resize", () => {
+    app.width = window.innerWidth;
+    app.height = window.innerHeight;
+  });
+});
+</script>
 
 <style lang="scss">
 .layout {

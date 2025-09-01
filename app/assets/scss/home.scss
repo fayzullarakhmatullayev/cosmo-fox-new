@@ -8,10 +8,10 @@
 }
 
 .home {
-  padding: 195px 0 160px;
+  padding: 325px 0 160px;
 
   @include tabletLg {
-    padding: 0 0 72px;
+    padding: 0 0 96px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -19,13 +19,18 @@
 
     height: calc(100dvh - 105px);
   }
+
+  @include laptopH {
+    padding: 220px 0 160px;
+  }
+
   &__wrapper {
     max-width: 640px;
     width: 100%;
-    margin-left: 116px;
+    margin-left: 65px;
 
     @include tabletLg {
-      margin-left: 0;
+      margin: 0 auto;
     }
   }
   &__video {

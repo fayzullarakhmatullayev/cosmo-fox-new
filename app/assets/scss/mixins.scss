@@ -4,6 +4,12 @@
   }
 }
 
+@mixin laptopH {
+  @media (max-height: 956.98px) {
+    @content;
+  }
+}
+
 @mixin laptopSm {
   @media (max-width: 1400.98px) {
     @content;

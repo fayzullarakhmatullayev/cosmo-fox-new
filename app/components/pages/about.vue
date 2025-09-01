@@ -27,12 +27,12 @@
             <li v-for="list in lists" :key="list">{{ t(list) }}</li>
           </ul>
 
-          <div class="about__footer" @click="isShow = true">
+          <!-- <div class="about__footer" @click="isShow = true">
             <button class="about__play">
               <nuxt-img src="/images/about/play.png" alt="play" format="webp" quality="80" />
             </button>
             <p>{{ t("about.watch") }}</p>
-          </div>
+          </div> -->
         </div>
         <transition name="fade" mode="out-in">
           <youtube-dialog v-if="isShow" @close="isShow = false" />

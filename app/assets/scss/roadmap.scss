@@ -1,8 +1,15 @@
 .roadmap {
-  padding: 36px 0 180px;
+  padding: 166px 0 180px;
+  min-height: 100dvh;
 
+  @include laptop {
+    padding-top: 110px;
+  }
+  @include laptopH {
+    padding-top: 110px;
+  }
   @include tabletSm {
-    padding: 19px 0 40px;
+    padding: 98px 0 40px;
   }
 
   .title {
