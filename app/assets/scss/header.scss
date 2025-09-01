@@ -50,10 +50,6 @@
     align-items: center;
     gap: 39px;
 
-    @include laptop {
-      gap: 20px;
-    }
-
     &--logo {
       width: 35px;
 
@@ -74,6 +70,7 @@
         font-size: 20px;
         padding: 0 30px;
         position: relative;
+        transition: opacity 0.3s ease;
 
         white-space: nowrap;
 
@@ -102,7 +99,7 @@
 
           @include laptopH {
             top: -50px;
-            height: 102px;
+            height: 98px;
           }
         }
 
@@ -132,6 +129,7 @@
         }
         &:hover,
         &.active {
+          color: #fff;
           &::after {
             opacity: 1;
           }

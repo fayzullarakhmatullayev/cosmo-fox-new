@@ -10,8 +10,8 @@
         >
           <div class="planet-wrapper">
             <div class="planet-card">
-              <h3>{{ item.date }}</h3>
-              <p>{{ item.text }}</p>
+              <h3>{{ t(item.date) }}</h3>
+              <p>{{ t(item.text) }}</p>
 
               <nuxt-img
                 src="/images/roadmap/roadmap-slot.png"
@@ -44,8 +44,8 @@
         >
           <div class="planet-wrapper">
             <div class="planet-card">
-              <h3>{{ item.date }}</h3>
-              <p>{{ item.text }}</p>
+              <h3>{{ t(item.date) }}</h3>
+              <p>{{ t(item.text) }}</p>
 
               <nuxt-img
                 src="/images/roadmap/roadmap-slot-mobile.png"
@@ -82,64 +82,64 @@ const isShipVisible = ref(false);
 
 const roadmap = computed(() => [
   {
-    date: "May 2025",
-    text: "MVP Build & Company Setup",
+    date: "roadmap.listTitle1",
+    text: "roadmap.listText1",
     planet: "/images/roadmap/planet-1.png",
     line: "/images/roadmap/line-1.png",
     mobileLine: "/images/roadmap/line-mobile-1.png"
   },
   {
-    date: "Summer 2025",
-    text: "Community &\n Early Access",
+    date: "roadmap.listTitle2",
+    text: "roadmap.listText2",
     planet: "/images/roadmap/planet-2.png",
     line: "/images/roadmap/line-2.png",
     mobileLine: "/images/roadmap/line-mobile-2.png"
   },
   {
-    date: "Sep 2025",
-    text: "Phase 1 Launch",
+    date: "roadmap.listTitle3",
+    text: "roadmap.listText3",
     planet: "/images/roadmap/planet-3.png",
     line: "/images/roadmap/line-3.png",
     mobileLine: "/images/roadmap/line-mobile-3.png"
   },
   {
-    date: "Fall 2025",
-    text: "Drill Race\n Evolution",
+    date: "roadmap.listTitle4",
+    text: "roadmap.listText4",
     planet: "/images/roadmap/planet-4.png",
     line: "/images/roadmap/line-4.png",
     mobileLine: "/images/roadmap/line-mobile-4.png"
   },
   {
-    date: "Q4 2025",
-    text: "Token Presale",
+    date: "roadmap.listTitle5",
+    text: "roadmap.listText5",
     planet: "/images/roadmap/planet-5.png",
     line: "/images/roadmap/line-5.png",
     mobileLine: "/images/roadmap/line-mobile-5.png"
   },
   {
-    date: "Feb 2026",
-    text: "Token Launch &\n Listing",
+    date: "roadmap.listTitle6",
+    text: "roadmap.listText6",
     planet: "/images/roadmap/planet-6.png",
     line: "/images/roadmap/line-6.png",
     mobileLine: "/images/roadmap/line-mobile-6.png"
   },
   {
-    date: "Feb 2026",
-    text: "Airdrop\n Distribution",
+    date: "roadmap.listTitle7",
+    text: "roadmap.listText7",
     planet: "/images/roadmap/planet-7.png",
     line: "/images/roadmap/line-7.png",
     mobileLine: "/images/roadmap/line-mobile-7.png"
   },
   {
-    date: "Q1 2026",
-    text: "Phase 2 Game\n Launch",
+    date: "roadmap.listTitle8",
+    text: "roadmap.listText8",
     planet: "/images/roadmap/planet-8.png",
     line: "/images/roadmap/line-8.png",
     mobileLine: "/images/roadmap/line-mobile-8.png"
   },
   {
-    date: "2026+",
-    text: "Ecosystem Growth\n & Governance",
+    date: "roadmap.listTitle9",
+    text: "roadmap.listText9",
     planet: "/images/roadmap/planet-9.png",
     line: null,
     mobileLine: null

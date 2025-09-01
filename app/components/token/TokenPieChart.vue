@@ -100,6 +100,8 @@ const simulateChartHover = (itemIndex: number | null) => {
     slice.style.transform = "scale(1)";
     slice.style.transformOrigin = "center";
     slice.style.transition = "transform 0.2s ease-out";
+    // Safari-specific fix: Force repaint
+    slice.style.willChange = "transform";
   });
 
   if (itemIndex !== null) {
@@ -109,6 +111,8 @@ const simulateChartHover = (itemIndex: number | null) => {
       targetSlice.style.transform = "scale(1.1)";
       targetSlice.style.transformOrigin = "center";
       targetSlice.style.transition = "transform 0.2s ease-out";
+      // Safari-specific fix: Force repaint
+      targetSlice.style.willChange = "transform";
     }
   }
 };
@@ -147,6 +151,10 @@ const options = computed(() => ({
           slice.style.transform = "scale(1.1)";
           slice.style.transformOrigin = "center";
           slice.style.transition = "transform 0.2s ease-out";
+          // Safari-specific fix: Force repaint
+          slice.style.willChange = "transform";
+          slice.style.backfaceVisibility = "hidden";
+          slice.style.perspective = "1000px";
         }
         const hoveredItem = props.items[itemIndex];
         emit("update:hoveredItem", hoveredItem);
@@ -162,6 +170,10 @@ const options = computed(() => ({
         );
         if (slice) {
           slice.style.transform = "scale(1)";
+          // Safari-specific fix: Reset properties
+          slice.style.willChange = "auto";
+          slice.style.backfaceVisibility = "visible";
+          slice.style.perspective = "none";
         }
         emit("update:hoveredItem", null);
       }
@@ -207,20 +219,62 @@ const options = computed(() => ({
 </script>
 
 <style lang="scss">
-.apexcharts-canvas .apexcharts-series {
-  path {
-    transition: transform 0.2s ease-out;
-    transform-origin: center;
+.apexcharts-canvas {
+  position: relative;
+  z-index: 1;
 
-    &[fill="transparent"] {
-      pointer-events: none;
+  .apexcharts-series {
+    overflow: visible !important;
+
+    path {
+      transition: transform 0.2s ease-out;
+      transform-origin: center;
+      will-change: transform;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+
+      position: relative;
+      z-index: 2;
+
+      &[fill="transparent"] {
+        pointer-events: none;
+      }
+
+      &:hover {
+        z-index: 10;
+        position: relative;
+      }
     }
   }
 }
 
 .chart {
+  overflow: visible !important;
+
   .apexcharts-svg {
-    overflow: visible;
+    overflow: visible !important;
+
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
+  .apexcharts-canvas,
+  .apexcharts-inner {
+    overflow: visible !important;
+  }
+}
+
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    .chart {
+      position: relative;
+      z-index: 1;
+
+      .apexcharts-series path {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+      }
+    }
   }
 }
 </style>

@@ -124,6 +124,7 @@
       .mine__card--image {
         img {
           animation: upDown 2s ease-in-out infinite;
+          -webkit-animation: upDown 2s ease-in-out infinite;
         }
       }
     }
@@ -140,6 +141,7 @@
       .mine__card--image {
         img {
           animation: downUp 2s ease-in-out infinite;
+          -webkit-animation: downUp 2s ease-in-out infinite;
         }
       }
     }
@@ -228,22 +230,28 @@
 @keyframes upDown {
   0% {
     transform: translateY(0);
+    -webkit-transform: translateY(0);
   }
   50% {
     transform: translateY(20px);
+    -webkit-transform: translateY(20px);
   }
   100% {
     transform: translateY(0);
+    -webkit-transform: translateY(0);
   }
 }
 @keyframes downUp {
   0% {
     transform: translateY(10px);
+    -webkit-transform: translateY(10px);
   }
   50% {
     transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
   }
   100% {
     transform: translateY(10px);
+    -webkit-transform: translateY(10px);
   }
 }

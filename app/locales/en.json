@@ -60,6 +60,24 @@
   "token_vesting": "token vesting",
   "token_zylo": "zylo token",
   "roadmap": {
-    "title": "roadmap"
+    "title": "roadmap",
+    "listTitle1": "May 2025",
+    "listText1": "MVP Build & Company Setup",
+    "listTitle2": "Summer 2025",
+    "listText2": "Community &\n Early Access",
+    "listTitle3": "Sep 2025",
+    "listText3": "Phase 1 Launch",
+    "listTitle4": "Fall 2025",
+    "listText4": "Drill Race\n Evolution",
+    "listTitle5": "Q4 2025",
+    "listText5": "Token Presale",
+    "listTitle6": "Jan 2026",
+    "listText6": "Token Launch &\n Listing",
+    "listTitle7": "Jan 2026",
+    "listText7": "Airdrop\n Distribution",
+    "listTitle8": "Q1 2026",
+    "listText8": "Phase 2 Game\n Launch",
+    "listTitle9": "2026+",
+    "listText9": "Ecosystem Growth\n & Governance"
   }
 }

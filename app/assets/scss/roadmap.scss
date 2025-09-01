@@ -1,5 +1,5 @@
 .roadmap {
-  padding: 166px 0 180px;
+  padding: 166px 77px 180px;
   min-height: 100dvh;
 
   @include laptop {
@@ -82,7 +82,7 @@
         right: -25px;
         height: 164px;
 
-        @include laptopSm {
+        @include laptop {
           right: -70px;
         }
       }

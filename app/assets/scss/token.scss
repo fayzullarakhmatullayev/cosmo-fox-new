@@ -182,7 +182,7 @@
 }
 
 .token-charts {
-  padding: 134px 0 210px;
+  padding: 134px 67px 210px;
 
   max-width: 1684px;
   width: 100%;
@@ -457,6 +457,7 @@
 
       svg {
         animation: rotate 5s linear infinite;
+        -webkit-animation: rotate 5s linear infinite;
       }
 
       @include mobile {
@@ -497,8 +498,10 @@
 @keyframes rotate {
   from {
     transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
   }
   to {
     transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
   }
 }
