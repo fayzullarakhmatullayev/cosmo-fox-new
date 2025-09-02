@@ -188,8 +188,8 @@
   width: 100%;
   margin: 0 auto;
 
-  @include laptopSm {
-    padding: 134px 0 210px;
+  @include laptopN {
+    padding: 134px 20px 210px;
   }
 
   @include mobile {
@@ -232,6 +232,10 @@
     height: 100%;
 
     position: relative;
+
+    @include laptopN {
+      min-height: auto;
+    }
 
     @include tabletSm {
       &::after,
@@ -307,7 +311,7 @@
         --clip-width: 18px;
       }
 
-      @include mobile {
+      @include laptopN {
         min-height: auto;
       }
     }
@@ -346,9 +350,6 @@
 
           @include laptop {
             padding: 15px 18px;
-            &:nth-child(1) {
-              padding-left: 20px !important;
-            }
 
             &:nth-child(2) {
               padding-left: 24px;
@@ -356,6 +357,10 @@
               padding-top: 14px !important;
               white-space: nowrap;
             }
+          }
+
+          @include laptopH {
+            font-size: 18px;
           }
 
           @include mobile {
@@ -380,6 +385,10 @@
           line-height: 1.1;
           font-weight: 400;
           padding: 12.5px 0;
+
+          @include laptopH {
+            font-size: 18px;
+          }
 
           @include mobile {
             vertical-align: top;
@@ -426,7 +435,7 @@
         }
 
         .top-border {
-          @include mobile {
+          @include laptopN {
             td {
               padding: 0;
             }

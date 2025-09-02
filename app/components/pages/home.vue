@@ -26,7 +26,8 @@
       loop
       muted
       playsinline
-      preload="auto"
+      webkit-playsinline
+      preload="metadata"
       src="/videos/fox_pilot.mp4"
       class="bg-img"
     ></video>
