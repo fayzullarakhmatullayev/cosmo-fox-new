@@ -46,7 +46,7 @@ function isIOS() {
   return /iPad|iPhone|iPod|Safari|AppleWebKit/.test(navigator.userAgent);
 }
 
-onMounted(async () => {
+onMounted(() => {
   mounted.value = true;
 });
 </script>
