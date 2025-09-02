@@ -40,7 +40,7 @@
       gap: 30px;
     }
 
-    @media (max-width: 1320px) {
+    @include tabletLg {
       display: none;
     }
 
@@ -247,7 +247,7 @@
     display: none;
     max-width: 800px;
     margin: 0 auto;
-    @media (max-width: 1320px) {
+    @include tabletLg {
       display: block;
     }
   }
