@@ -299,7 +299,9 @@
 
       background-color: rgba(4, 43, 78, 0.5);
       border: 3px solid #37dd97;
-
+      @include laptopN {
+        --clip-width: 58px;
+      }
       @media (max-width: 1520px) {
         --clip-width: 72px;
       }
