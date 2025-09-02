@@ -27,6 +27,10 @@
     margin: 0 auto;
     min-height: 640px;
     position: relative;
+    @include laptopN {
+      max-width: 1300px;
+      zoom: 0.8;
+    }
 
     @include tabletLg {
       display: none;
@@ -119,6 +123,10 @@
         bottom: calc(-100% - 60px);
         right: 11px;
         height: 225px;
+
+        @include laptopN {
+          right: -16px;
+        }
       }
     }
     .planet-6 {
@@ -153,6 +161,10 @@
         bottom: calc(-100% - 60px);
         right: 13px;
         height: 168px;
+
+        @include laptopN {
+          right: -16px;
+        }
       }
     }
     .planet-8 {
