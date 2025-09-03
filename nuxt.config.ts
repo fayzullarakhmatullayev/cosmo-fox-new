@@ -6,7 +6,7 @@ export default defineNuxtConfig({
 
   css: [
     "~/assets/fonts/stylesheet.css",
-    "~/assets/css/style.css",
+    "~/assets/scss/main.scss",
     "swiper/css",
     "swiper/css/pagination",
     "swiper/css/navigation"
