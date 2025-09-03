@@ -302,11 +302,9 @@
       @include laptopN {
         --clip-width: 58px;
       }
-      @media (max-width: 1520px) {
-        --clip-width: 72px;
-      }
+
       @media (max-width: 1270px) {
-        --clip-width: 76px;
+        --clip-width: 60px;
       }
 
       @include tabletSm {

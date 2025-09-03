@@ -115,6 +115,9 @@
           transition: opacity 0.3s ease;
           opacity: 0;
 
+          @include laptopH {
+            bottom: -33px;
+          }
           @include laptop {
             bottom: -33px;
           }

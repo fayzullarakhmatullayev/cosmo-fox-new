@@ -1,5 +1,5 @@
 <template>
-  <section class="home hero" :class="{ fast: !isSlowConnection }">
+  <section id="home" class="home hero" :class="{ fast: !isSlowConnection }">
     <div class="container">
       <div class="home__wrapper">
         <div class="home__video">
