@@ -61,20 +61,27 @@
             </tbody>
           </table>
         </div>
-        <nuxt-img
+        <!-- <nuxt-img
+          src="/images/token/borders.png"
+          alt="token-border"
+          class="token-border token-border-full"
+          quality="60"
+          format="webp"
+        /> -->
+        <!-- <nuxt-img
           src="/images/token/token-border-left.png"
           alt="token-border"
           class="token-border token-border-left"
           quality="60"
           format="webp"
-        />
-        <nuxt-img
+        /> -->
+        <!-- <nuxt-img
           src="/images/token/token-border-right.png"
           alt="token-border"
           class="token-border token-border-right"
           quality="60"
           format="webp"
-        />
+        /> -->
       </div>
     </div>
   </div>

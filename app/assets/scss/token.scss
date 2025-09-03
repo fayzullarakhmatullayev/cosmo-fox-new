@@ -237,6 +237,27 @@
       min-height: auto;
     }
 
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      width: 108px;
+      height: 96px;
+      z-index: 5;
+    }
+
+    &::after {
+      background: url("/images/token/token-border-r.png") center no-repeat;
+      top: -3px;
+      right: -4px;
+    }
+    &::before {
+      background: url("/images/token/token-border-l.png") center no-repeat;
+
+      bottom: -3px;
+      left: -4px;
+    }
+
     @include tabletSm {
       &::after,
       &::before {
@@ -284,7 +305,7 @@
     }
 
     .table-inner {
-      --clip-width: 63px;
+      --clip-width: 66px;
       width: 100%;
       min-height: 536px;
       height: 100%;
@@ -299,13 +320,14 @@
 
       background-color: rgba(4, 43, 78, 0.5);
       border: 3px solid #37dd97;
-      @include laptopN {
-        --clip-width: 58px;
+
+      @include mobile {
+        min-height: auto;
       }
 
-      @media (max-width: 1270px) {
-        --clip-width: 60px;
-      }
+      // @media (max-width: 1270px) {
+      //   --clip-width: 60px;
+      // }
 
       @include tabletSm {
         --clip-width: 18px;
@@ -314,6 +336,14 @@
       @include laptopN {
         min-height: auto;
       }
+    }
+
+    .token-border-full {
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
     }
 
     .table {
