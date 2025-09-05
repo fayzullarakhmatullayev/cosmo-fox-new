@@ -4,7 +4,7 @@
       <div class="home__wrapper">
         <div class="home__video">
           <template v-if="mounted">
-            <img v-if="isIOS()" src="/images/title-fallback.png" alt="Video fallback" />
+            <img v-if="isIOS" src="/images/title-fallback.png" alt="Video fallback" />
             <video v-else autoplay loop muted playsinline preload="auto" src="/videos/title.mp4">
               <source src="/videos/title.mp4" type="video/mp4" />
             </video>
@@ -45,9 +45,9 @@ const { isSlowConnection } = useConnectionSpeed();
 const lists = reactive(["home.list1", "home.list2", "home.list3"]);
 const mounted = ref(false);
 
-function isIOS() {
-  return /iPad|iPhone|iPod|Safari|AppleWebKit/.test(navigator.userAgent);
-}
+const isIOS = computed(() => {
+  return /iPad|iPhone|iPod|Safari|AppleWebKit/.test(navigator?.userAgent);
+});
 
 onMounted(() => {
   mounted.value = true;

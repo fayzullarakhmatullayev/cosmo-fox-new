@@ -64,7 +64,11 @@ export default defineNuxtConfig({
       twitterUrl: process.env.NUXT_TWITTER_URL,
       cookiePolicyUrl: process.env.NUXT_COOKIE_POLICY_URL,
       privacyPolicyUrl: process.env.NUXT_PRIVACY_POLICY_URL,
-      tokenomicUrl: process.env.NUXT_TOKENNOMIC_URL
+      tokenomicUrl: process.env.NUXT_TOKENNOMIC_URL,
+      mediciUrl: process.env.NUXT_MEDICI_URL,
+      icodaUrl: process.env.NUXT_ICODA_URL,
+      cicadaUrl: process.env.NUXT_CICADA_URL,
+      tonUrl: process.env.NUXT_TON_URL
     }
   },
 

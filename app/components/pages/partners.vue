@@ -3,7 +3,7 @@
     <div class="title">{{ $t("parthers_title") }}</div>
 
     <div class="partners__wrapper">
-      <div v-for="card in partners" :key="card.image" class="partners__card">
+      <a v-for="card in partners" :key="card.image" :href="card.link" target="_blank" class="partners__card">
         <nuxt-img
           :src="card.image"
           alt="partner"
@@ -19,7 +19,7 @@
           format="webp"
           class="partners__card--slot"
         />
-      </div>
+      </a>
     </div>
     <div class="partners__links">
       <a :href="config.public.cookiePolicyUrl" target="_blank"><span>Cookie policy</span> <icon-link-white /></a>
@@ -48,10 +48,10 @@
 const config = useRuntimeConfig();
 
 const partners = computed(() => [
-  { image: "/images/partners/partner-1.png", height: 47 },
-  { image: "/images/partners/partner-2.png", height: 43 },
-  { image: "/images/partners/partner-3.png", height: 56 },
-  { image: "/images/partners/partner-4.png", height: 54 }
+  { image: "/images/partners/partner-1.png", height: 47, link: config.public.mediciUrl },
+  { image: "/images/partners/partner-2.png", height: 43, link: config.public.icodaUrl },
+  { image: "/images/partners/partner-3.png", height: 56, link: config.public.cicadaUrl },
+  { image: "/images/partners/partner-4.png", height: 54, link: config.public.tonUrl }
 ]);
 
 const socials = reactive([
