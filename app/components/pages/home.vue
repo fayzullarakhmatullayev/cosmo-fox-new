@@ -46,7 +46,15 @@ const lists = reactive(["home.list1", "home.list2", "home.list3"]);
 const mounted = ref(false);
 
 const isIOS = computed(() => {
-  return /iPad|iPhone|iPod|Safari|AppleWebKit/.test(navigator?.userAgent);
+  const ua = navigator.userAgent;
+
+  if (/iPad|iPhone|iPod/.test(ua)) return true;
+
+  if (/Macintosh/.test(ua) && "ontouchend" in document) {
+    return true;
+  }
+
+  return false;
 });
 
 onMounted(() => {
