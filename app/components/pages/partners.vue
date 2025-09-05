@@ -22,10 +22,10 @@
       </div>
     </div>
     <div class="partners__links">
-      <a href="#"><span>Cookie policy</span> <icon-link-white /></a>
-      <a href="#"><span>privacy policy</span> <icon-link-white /></a>
-      <a href="#"><span>tokenomic</span> <icon-link-white /></a>
-      <a href="#"><span>blog</span> <icon-link-white /></a>
+      <a :href="config.public.cookiePolicyUrl" target="_blank"><span>Cookie policy</span> <icon-link-white /></a>
+      <a :href="config.public.privacyPolicyUrl" target="_blank"><span>privacy policy</span> <icon-link-white /></a>
+      <a :href="config.public.tokenomicUrl" target="_blank"><span>tokenomic</span> <icon-link-white /></a>
+      <a :href="config.public.blogUrl" target="_blank"><span>blog</span> <icon-link-white /></a>
     </div>
 
     <div class="partners__social footer__social">
@@ -34,6 +34,7 @@
         :key="social.name"
         :href="social.link"
         class="footer__social--item"
+        target="_blank"
         :style="{ width: `${social.width}px` }"
       >
         <component :is="`icon-${social.icon}`" :style="{ width: `${social.width}px` }" />
@@ -44,6 +45,8 @@
 </template>
 
 <script lang="ts" setup>
+const config = useRuntimeConfig();
+
 const partners = computed(() => [
   { image: "/images/partners/partner-1.png", height: 47 },
   { image: "/images/partners/partner-2.png", height: 43 },
@@ -52,9 +55,9 @@ const partners = computed(() => [
 ]);
 
 const socials = reactive([
-  { icon: "telegram", name: "chat", width: 42, link: "#" },
-  { icon: "telegram", name: "news", width: 42, link: "#" },
-  { icon: "discord", name: "discord", width: 48, link: "#" },
-  { icon: "twitter", name: "x.com", width: 35, link: "#" }
+  { icon: "telegram", name: "chat", width: 42, link: config.public.tgChatUrl },
+  { icon: "telegram", name: "news", width: 42, link: config.public.tgNewsUrl },
+  { icon: "discord", name: "discord", width: 48, link: config.public.discordUrl },
+  { icon: "twitter", name: "x.com", width: 35, link: config.public.twitterUrl }
 ]);
 </script>

@@ -15,7 +15,9 @@
           <ul class="home__list">
             <li v-for="list in lists" :key="list">{{ t(list) }}</li>
           </ul>
-          <ui-button class="home__button" variant="large" href="#">{{ t("play") }}</ui-button>
+          <ui-button class="home__button" variant="large" :href="config.public.playUrl" target="_blank">
+            {{ t("play") }}
+          </ui-button>
         </div>
       </div>
     </div>
@@ -37,7 +39,7 @@
 
 <script lang="ts" setup>
 const { t } = useI18n();
-
+const config = useRuntimeConfig();
 const { isSlowConnection } = useConnectionSpeed();
 
 const lists = reactive(["home.list1", "home.list2", "home.list3"]);

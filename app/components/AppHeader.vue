@@ -13,14 +13,16 @@
             <a v-for="nav in navs" :key="nav.to" active-class="active" :href="nav.to">
               {{ t(nav.label) }}
             </a>
-            <a href="#">{{ t("nav.white-paper") }}</a>
-            <a href="#">{{ t("nav.blog") }}</a>
+            <a :href="config.public.whitePaperUrl" target="_blank">{{ t("nav.white-paper") }}</a>
+            <a :href="config.public.blogUrl" target="_blank">{{ t("nav.blog") }}</a>
           </nav>
         </div>
 
         <!-- Locales -->
         <div class="header__right">
-          <ui-button class="header__right--btn" href="#">{{ t("play") }}</ui-button>
+          <ui-button class="header__right--btn" :href="config.public.playUrl" target="_blank">{{
+            t("play")
+          }}</ui-button>
           <div class="header__lang">
             <div class="header__lang--selected" @click="isLocaleVisible = !isLocaleVisible">
               <icon-array-down />
@@ -57,6 +59,8 @@
 const { locales, setLocale, t, locale } = useI18n();
 const isLocaleVisible = ref(false);
 const isMenuVisible = ref(false);
+
+const config = useRuntimeConfig();
 
 const navs = reactive([
   { to: "#about", label: "nav.about" },

@@ -14,13 +14,14 @@
       </swiper-container>
     </div>
 
-    <ui-button variant="medium" class="token__button" href="#">
+    <ui-button variant="medium" class="token__button" :href="config.public.whitePaperUrl" target="_blank">
       <span>white paper <icon-link /></span>
     </ui-button>
   </div>
 </template>
 
 <script lang="ts" setup>
+const config = useRuntimeConfig();
 const cards = computed(() => [
   { image: "/images/token/token-1.png", text: "token.text1" },
   { image: "/images/token/token-2.png", text: "token.text2" },

@@ -53,6 +53,21 @@ export default defineNuxtConfig({
     }
   },
 
+  runtimeConfig: {
+    public: {
+      whitePaperUrl: process.env.NUXT_WHITE_PAPER_URL,
+      blogUrl: process.env.NUXT_BLOG_URL,
+      playUrl: process.env.NUXT_PLAY_URL,
+      tgChatUrl: process.env.NUXT_TG_CHAT_URL,
+      tgNewsUrl: process.env.NUXT_TG_NEWS_URL,
+      discordUrl: process.env.NUXT_DISCORD_URL,
+      twitterUrl: process.env.NUXT_TWITTER_URL,
+      cookiePolicyUrl: process.env.NUXT_COOKIE_POLICY_URL,
+      privacyPolicyUrl: process.env.NUXT_PRIVACY_POLICY_URL,
+      tokenomicUrl: process.env.NUXT_TOKENNOMIC_URL
+    }
+  },
+
   svgo: {
     componentPrefix: "icon",
     defaultImport: "component"
